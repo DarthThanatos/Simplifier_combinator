@@ -1,0 +1,4 @@
+eclipse
+run examples\gcd.spy
+test
+exit
