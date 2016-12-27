@@ -2,37 +2,11 @@
 [0m[[0minfo[0m] [0m[37m[0m[37m[0m[0m
 [0m[[0minfo[0m] [0m[37m[0m[37mparser should[0m[37m[0m[0m
 [0m[[0minfo[0m] [0m[37m[0m[32m+[0m fail on incorrect input[37m[0m[0m
-[0m[[0minfo[0m] [0m[37m[0m[37m[33mx[0m recognize elif branches in if-else stmts[0m[0m
-[0m[[31merror[0m] [0m   Got the exception java.lang.IllegalArgumentException: FAILURE Could not parse 'if x>1:[0m
-[0m[[31merror[0m] [0m                      { [0m
-[0m[[31merror[0m] [0m                         y = -1[0m
-[0m[[31merror[0m] [0m                      }[0m
-[0m[[31merror[0m] [0m                      elif x>0:[0m
-[0m[[31merror[0m] [0m                      {[0m
-[0m[[31merror[0m] [0m                         y = 1[0m
-[0m[[31merror[0m] [0m                      }[0m
-[0m[[31merror[0m] [0m                      elif x>-1:[0m
-[0m[[31merror[0m] [0m                      {[0m
-[0m[[31merror[0m] [0m                         y = -1[0m
-[0m[[31merror[0m] [0m                      }[0m
-[0m[[31merror[0m] [0m                      else: [0m
-[0m[[31merror[0m] [0m                      {[0m
-[0m[[31merror[0m] [0m                         y = 1[0m
-[0m[[31merror[0m] [0m                      } ': string matching regex `(\r?\n)|\r' expected but `x' found (Specs.scala:46)[0m
-[0m[[0minfo[0m] [0m[37m[0m[0m
-[0m[[0minfo[0m] [0m[37m[0m[37m[33mx[0m parse expressions[0m[0m
-[0m[[31merror[0m] [0m   '[1.5] parsed: TrueConst()' is not equal to 'TrueConst()' (Specs.scala:51)[0m
-[0m[[0minfo[0m] [0m [0m
-[0m[[31merror[0m] [0mExpected: TrueConst()[0m
-[0m[[0minfo[0m] [0m [0m
-[0m[[31merror[0m] [0mActual:   [1.5] parsed: TrueConst()[0m
-[0m[[0minfo[0m] [0m [0m
-[0m[[0minfo[0m] [0m[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[32m+[0m recognize elif branches in if-else stmts[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[32m+[0m parse expressions[37m[0m[0m
 [0m[[0minfo[0m] [0m[37m[0m[37m[0m[0m
 [0m[[0minfo[0m] [0m[37m[0m[37msimplifier should[0m[37m[0m[0m
-[0m[[0minfo[0m] [0m[37m[0m[37m[33mx[0m recognize tuples[0m[0m
-[0m[[31merror[0m] [0m   Got the exception java.lang.IllegalArgumentException: FAILURE Could not parse 'x=(a,b,c)': `)' expected but `,' found (Specs.scala:67)[0m
-[0m[[0minfo[0m] [0m[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[32m+[0m recognize tuples[37m[0m[0m
 [0m[[0minfo[0m] [0m[37m[0m[37m[33mx[0m recognize power laws[0m[0m
 [0m[[31merror[0m] [0m   Got the exception java.lang.IllegalArgumentException: FAILURE Could not parse 'x**y*x**z': `{' expected but `*' found (Specs.scala:71)[0m
 [0m[[0minfo[0m] [0m[37m[0m[0m
@@ -169,7 +143,7 @@
 [0m[[0minfo[0m] [0m [0m
 [0m[[0minfo[0m] [0m[37m[0m[0m
 [0m[[0minfo[0m] [0m[37m[0m[37m[33mx[0m simplify if-else instruction with known condition[0m[0m
-[0m[[31merror[0m] [0m   'NodeList(List(IfElseInstr(TrueConst(),NodeList(List(NodeList(List(Assignment(Variable(x),IntNum(1)))))),NodeList(List(NodeList(List(Assignment(Variable(x),IntNum(0)))))))))'[0m
+[0m[[31merror[0m] [0m   'NodeList(List(IfElifElse(TrueConst(),NodeList(List(NodeList(List(Assignment(Variable(x),IntNum(1)))))),ElIfList(List()),NodeList(List(NodeList(List(Assignment(Variable(x),IntNum(0)))))))))'[0m
 [0m[[31merror[0m] [0m   [0m
 [0m[[31merror[0m] [0m    is not equal to [0m
 [0m[[31merror[0m] [0m   [0m
@@ -177,7 +151,7 @@
 [0m[[0minfo[0m] [0m [0m
 [0m[[31merror[0m] [0mExpected: NodeList(List(NodeList(List(Assignment(Variable(x),IntNum(1))))))[0m
 [0m[[0minfo[0m] [0m [0m
-[0m[[31merror[0m] [0mActual:   NodeList(List(IfElseInstr(TrueConst(),NodeList(List(NodeList(List(Assignment(Variable(x),IntNum(1)))))),NodeList(List(NodeList(List(Assignment(Variable(x),IntNum(0)))))))))[0m
+[0m[[31merror[0m] [0mActual:   NodeList(List(IfElifElse(TrueConst(),NodeList(List(NodeList(List(Assignment(Variable(x),IntNum(1)))))),ElIfList(List()),NodeList(List(NodeList(List(Assignment(Variable(x),IntNum(0)))))))))[0m
 [0m[[0minfo[0m] [0m [0m
 [0m[[0minfo[0m] [0m[37m[0m[0m
 [0m[[0minfo[0m] [0m[37m[0m[37m[33mx[0m simplify if-else expression with known condition[0m[0m
@@ -206,6 +180,6 @@
 [0m[[0minfo[0m] [0m[37m[0m[0m
 [0m[[0minfo[0m] [0m[37m[0m[37m[0m[0m
 [0m[[0minfo[0m] [0m[37m[0mTotal for specification parserSpec[0m
-[0m[[0minfo[0m] [0m[36mFinished in 839 ms[0m[0m
-[0m[[0minfo[0m] [0m[36m[0m[36m19 examples, 18 failures, 0 error[0m[0m
+[0m[[0minfo[0m] [0m[36mFinished in 79 ms[0m[0m
+[0m[[0minfo[0m] [0m[36m[0m[36m19 examples, 15 failures, 0 error[0m[0m
 [0m[[0minfo[0m] [0m [0m

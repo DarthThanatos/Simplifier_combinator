@@ -1,4 +1,4 @@
-[0m[[0minfo[0m] [0mUpdating {file:/C:/Users/Robert/Desktop/Robert/agh/kompilatory/laby/zad5/simplifier_combinator/project/}simplifier_combinator-build...[0m
+[0m[[0minfo[0m] [0mUpdating {file:/C:/Users/Vobis/Desktop/workspace/Simplifier_combinator/project/}simplifier_combinator-build...[0m
 [0m[[0mdebug[0m] [0m:: resolving dependencies :: default#simplifier_combinator-build;0.1-SNAPSHOT[0m
 [0m[[0mdebug[0m] [0m	confs: [compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, sources, docs, pom, scala-tool][0m
 [0m[[0mdebug[0m] [0m	validate = true[0m
@@ -60,18 +60,6 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalaz#scalaz-effect_2.10;7.0.2->org.scala-lang#scala-library;2.10.1 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalaz#scalaz-effect_2.10;7.0.2->org.scala-lang#scala-library;2.10.1 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbteclipse#sbteclipse-core;2.5.0->org.scalaz#scalaz-effect_2.10;7.0.2 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#global-plugins;0.0->com.github.retronym#sbt-onejar;0.7 [compile->default(compile)][0m
-[0m[[0minfo[0m] [0mResolving com.github.retronym#sbt-onejar;0.7 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.github.retronym#sbt-onejar;0.7 {compile=[default(compile)]}[0m
-[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: com.github.retronym#sbt-onejar;0.7[0m
-[0m[[0mdebug[0m] [0m	typesafe-ivy-releases: revision in cache: com.github.retronym#sbt-onejar;0.7[0m
-[0m[[0mdebug[0m] [0m	found com.github.retronym#sbt-onejar;0.7 in sbt-chain[0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#global-plugins;0.0->org.scala-sbt.plugins#sbt-onejar;0.8 [compile->default(compile)][0m
-[0m[[0minfo[0m] [0mResolving org.scala-sbt.plugins#sbt-onejar;0.8 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: org.scala-sbt.plugins#sbt-onejar;0.8 {compile=[default(compile)]}[0m
-[0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-sbt.plugins#sbt-onejar;0.8[0m
-[0m[[0mdebug[0m] [0m	typesafe-ivy-releases: revision in cache: org.scala-sbt.plugins#sbt-onejar;0.8[0m
-[0m[[0mdebug[0m] [0m	found org.scala-sbt.plugins#sbt-onejar;0.8 in sbt-chain[0m
 [0m[[0mdebug[0m] [0m== resolving dependencies default#simplifier_combinator-build;0.1-SNAPSHOT->com.eed3si9n#sbt-assembly;0.11.2 [compile->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving com.eed3si9n#sbt-assembly;0.11.2 ...[0m
 [0m[[0mdebug[0m] [0msbt-chain: Checking cache for: dependency: com.eed3si9n#sbt-assembly;0.11.2 {compile=[default(compile)]}[0m
@@ -124,8 +112,6 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalaz#scalaz-effect_2.10;7.0.2->org.scala-lang#scala-library;2.10.1 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalaz#scalaz-effect_2.10;7.0.2->org.scala-lang#scala-library;2.10.1 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbteclipse#sbteclipse-core;2.5.0->org.scalaz#scalaz-effect_2.10;7.0.2 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#global-plugins;0.0->com.github.retronym#sbt-onejar;0.7 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#global-plugins;0.0->org.scala-sbt.plugins#sbt-onejar;0.8 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies default#simplifier_combinator-build;0.1-SNAPSHOT->com.eed3si9n#sbt-assembly;0.11.2 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies default#simplifier_combinator-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.6.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies default#simplifier_combinator-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.6.0 [compile->runtime][0m
@@ -162,8 +148,6 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalaz#scalaz-effect_2.10;7.0.2->org.scala-lang#scala-library;2.10.1 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalaz#scalaz-effect_2.10;7.0.2->org.scala-lang#scala-library;2.10.1 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbteclipse#sbteclipse-core;2.5.0->org.scalaz#scalaz-effect_2.10;7.0.2 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#global-plugins;0.0->com.github.retronym#sbt-onejar;0.7 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#global-plugins;0.0->org.scala-sbt.plugins#sbt-onejar;0.8 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies default#simplifier_combinator-build;0.1-SNAPSHOT->com.eed3si9n#sbt-assembly;0.11.2 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies default#simplifier_combinator-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.6.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies default#simplifier_combinator-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.6.0 [compile->runtime][0m
@@ -177,7 +161,7 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies for default#simplifier_combinator-build;0.1-SNAPSHOT [provided][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies default#simplifier_combinator-build;0.1-SNAPSHOT->org.scala-lang#scala-library;2.10.4 [provided->default(compile)][0m
 [0m[[0minfo[0m] [0mResolving org.scala-lang#scala-library;2.10.4 ...[0m
-[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@e2a607[0m
+[0m[[0mdebug[0m] [0msbt-chain: Checking cache for: sbt.ivyint.MergedDescriptors@48c887d5[0m
 [0m[[0mdebug[0m] [0msbt-chain: module revision found in cache: org.scala-lang#scala-library;2.10.4[0m
 [0m[[0mdebug[0m] [0m	typesafe-ivy-releases: revision in cache: org.scala-lang#scala-library;2.10.4[0m
 [0m[[0mdebug[0m] [0m	found org.scala-lang#scala-library;2.10.4 in sbt-chain[0m
@@ -764,8 +748,6 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalaz#scalaz-effect_2.10;7.0.2->org.scala-lang#scala-library;2.10.4 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalaz#scalaz-effect_2.10;7.0.2->org.scala-lang#scala-library;2.10.4 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbteclipse#sbteclipse-core;2.5.0->org.scalaz#scalaz-effect_2.10;7.0.2 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#global-plugins;0.0->com.github.retronym#sbt-onejar;0.7 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#global-plugins;0.0->org.scala-sbt.plugins#sbt-onejar;0.8 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies default#simplifier_combinator-build;0.1-SNAPSHOT->com.eed3si9n#sbt-assembly;0.11.2 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies default#simplifier_combinator-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.6.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies default#simplifier_combinator-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.6.0 [compile->runtime][0m
@@ -1128,8 +1110,6 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalaz#scalaz-effect_2.10;7.0.2->org.scala-lang#scala-library;2.10.1 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalaz#scalaz-effect_2.10;7.0.2->org.scala-lang#scala-library;2.10.1 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbteclipse#sbteclipse-core;2.5.0->org.scalaz#scalaz-effect_2.10;7.0.2 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#global-plugins;0.0->com.github.retronym#sbt-onejar;0.7 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#global-plugins;0.0->org.scala-sbt.plugins#sbt-onejar;0.8 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies default#simplifier_combinator-build;0.1-SNAPSHOT->com.eed3si9n#sbt-assembly;0.11.2 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies default#simplifier_combinator-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.6.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies default#simplifier_combinator-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.6.0 [compile->runtime][0m
@@ -1174,8 +1154,6 @@
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalaz#scalaz-effect_2.10;7.0.2->org.scala-lang#scala-library;2.10.4 [runtime->runtime(*)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies org.scalaz#scalaz-effect_2.10;7.0.2->org.scala-lang#scala-library;2.10.4 [runtime->compile][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies com.typesafe.sbteclipse#sbteclipse-core;2.5.0->org.scalaz#scalaz-effect_2.10;7.0.2 [compile->master][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#global-plugins;0.0->com.github.retronym#sbt-onejar;0.7 [compile->default(compile)][0m
-[0m[[0mdebug[0m] [0m== resolving dependencies default#global-plugins;0.0->org.scala-sbt.plugins#sbt-onejar;0.8 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies default#simplifier_combinator-build;0.1-SNAPSHOT->com.eed3si9n#sbt-assembly;0.11.2 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies default#simplifier_combinator-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.6.0 [compile->default(compile)][0m
 [0m[[0mdebug[0m] [0m== resolving dependencies default#simplifier_combinator-build;0.1-SNAPSHOT->com.github.mpeltonen#sbt-idea;1.6.0 [compile->runtime][0m
@@ -1567,8 +1545,6 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.eed3si9n#sbt-assembly;0.11.2!sbt-assembly.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.github.mpeltonen#sbt-idea;1.6.0!sbt-idea.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.sbteclipse#sbteclipse-plugin;2.5.0!sbteclipse-plugin.jar[0m
-[0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.github.retronym#sbt-onejar;0.7!sbt-onejar.jar[0m
-[0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-sbt.plugins#sbt-onejar;0.8!sbt-onejar.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] com.typesafe.sbteclipse#sbteclipse-core;2.5.0!sbteclipse-core.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scalaz#scalaz-core_2.10;7.0.2!scalaz-core_2.10.jar(bundle)[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scalaz#scalaz-effect_2.10;7.0.2!scalaz-effect_2.10.jar(bundle)[0m
@@ -1622,19 +1598,19 @@
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-sbt#apply-macro;0.13.5!apply-macro.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.scala-lang#jline;2.10.4!jline.jar[0m
 [0m[[0mdebug[0m] [0m	[NOT REQUIRED] org.fusesource.jansi#jansi;1.4!jansi.jar[0m
-[0m[[0mdebug[0m] [0m:: resolution report :: resolve 7700ms :: artifacts dl 380ms[0m
-[0m[[0mdebug[0m] [0m	report for default#simplifier_combinator-build;0.1-SNAPSHOT compile produced in C:\Users\Robert\Desktop\Robert\agh\kompilatory\laby\zad5\simplifier_combinator\project\target\resolution-cache\reports\default-simplifier_combinator-build-compile.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#simplifier_combinator-build;0.1-SNAPSHOT runtime produced in C:\Users\Robert\Desktop\Robert\agh\kompilatory\laby\zad5\simplifier_combinator\project\target\resolution-cache\reports\default-simplifier_combinator-build-runtime.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#simplifier_combinator-build;0.1-SNAPSHOT test produced in C:\Users\Robert\Desktop\Robert\agh\kompilatory\laby\zad5\simplifier_combinator\project\target\resolution-cache\reports\default-simplifier_combinator-build-test.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#simplifier_combinator-build;0.1-SNAPSHOT provided produced in C:\Users\Robert\Desktop\Robert\agh\kompilatory\laby\zad5\simplifier_combinator\project\target\resolution-cache\reports\default-simplifier_combinator-build-provided.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#simplifier_combinator-build;0.1-SNAPSHOT optional produced in C:\Users\Robert\Desktop\Robert\agh\kompilatory\laby\zad5\simplifier_combinator\project\target\resolution-cache\reports\default-simplifier_combinator-build-optional.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#simplifier_combinator-build;0.1-SNAPSHOT compile-internal produced in C:\Users\Robert\Desktop\Robert\agh\kompilatory\laby\zad5\simplifier_combinator\project\target\resolution-cache\reports\default-simplifier_combinator-build-compile-internal.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#simplifier_combinator-build;0.1-SNAPSHOT runtime-internal produced in C:\Users\Robert\Desktop\Robert\agh\kompilatory\laby\zad5\simplifier_combinator\project\target\resolution-cache\reports\default-simplifier_combinator-build-runtime-internal.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#simplifier_combinator-build;0.1-SNAPSHOT test-internal produced in C:\Users\Robert\Desktop\Robert\agh\kompilatory\laby\zad5\simplifier_combinator\project\target\resolution-cache\reports\default-simplifier_combinator-build-test-internal.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#simplifier_combinator-build;0.1-SNAPSHOT plugin produced in C:\Users\Robert\Desktop\Robert\agh\kompilatory\laby\zad5\simplifier_combinator\project\target\resolution-cache\reports\default-simplifier_combinator-build-plugin.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#simplifier_combinator-build;0.1-SNAPSHOT sources produced in C:\Users\Robert\Desktop\Robert\agh\kompilatory\laby\zad5\simplifier_combinator\project\target\resolution-cache\reports\default-simplifier_combinator-build-sources.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#simplifier_combinator-build;0.1-SNAPSHOT docs produced in C:\Users\Robert\Desktop\Robert\agh\kompilatory\laby\zad5\simplifier_combinator\project\target\resolution-cache\reports\default-simplifier_combinator-build-docs.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#simplifier_combinator-build;0.1-SNAPSHOT pom produced in C:\Users\Robert\Desktop\Robert\agh\kompilatory\laby\zad5\simplifier_combinator\project\target\resolution-cache\reports\default-simplifier_combinator-build-pom.xml[0m
-[0m[[0mdebug[0m] [0m	report for default#simplifier_combinator-build;0.1-SNAPSHOT scala-tool produced in C:\Users\Robert\Desktop\Robert\agh\kompilatory\laby\zad5\simplifier_combinator\project\target\resolution-cache\reports\default-simplifier_combinator-build-scala-tool.xml[0m
-[0m[[0mdebug[0m] [0m	resolve done (7700ms resolve - 380ms download)[0m
+[0m[[0mdebug[0m] [0m:: resolution report :: resolve 2169ms :: artifacts dl 49ms[0m
+[0m[[0mdebug[0m] [0m	report for default#simplifier_combinator-build;0.1-SNAPSHOT compile produced in C:\Users\Vobis\Desktop\workspace\Simplifier_combinator\project\target\resolution-cache\reports\default-simplifier_combinator-build-compile.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#simplifier_combinator-build;0.1-SNAPSHOT runtime produced in C:\Users\Vobis\Desktop\workspace\Simplifier_combinator\project\target\resolution-cache\reports\default-simplifier_combinator-build-runtime.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#simplifier_combinator-build;0.1-SNAPSHOT test produced in C:\Users\Vobis\Desktop\workspace\Simplifier_combinator\project\target\resolution-cache\reports\default-simplifier_combinator-build-test.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#simplifier_combinator-build;0.1-SNAPSHOT provided produced in C:\Users\Vobis\Desktop\workspace\Simplifier_combinator\project\target\resolution-cache\reports\default-simplifier_combinator-build-provided.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#simplifier_combinator-build;0.1-SNAPSHOT optional produced in C:\Users\Vobis\Desktop\workspace\Simplifier_combinator\project\target\resolution-cache\reports\default-simplifier_combinator-build-optional.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#simplifier_combinator-build;0.1-SNAPSHOT compile-internal produced in C:\Users\Vobis\Desktop\workspace\Simplifier_combinator\project\target\resolution-cache\reports\default-simplifier_combinator-build-compile-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#simplifier_combinator-build;0.1-SNAPSHOT runtime-internal produced in C:\Users\Vobis\Desktop\workspace\Simplifier_combinator\project\target\resolution-cache\reports\default-simplifier_combinator-build-runtime-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#simplifier_combinator-build;0.1-SNAPSHOT test-internal produced in C:\Users\Vobis\Desktop\workspace\Simplifier_combinator\project\target\resolution-cache\reports\default-simplifier_combinator-build-test-internal.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#simplifier_combinator-build;0.1-SNAPSHOT plugin produced in C:\Users\Vobis\Desktop\workspace\Simplifier_combinator\project\target\resolution-cache\reports\default-simplifier_combinator-build-plugin.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#simplifier_combinator-build;0.1-SNAPSHOT sources produced in C:\Users\Vobis\Desktop\workspace\Simplifier_combinator\project\target\resolution-cache\reports\default-simplifier_combinator-build-sources.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#simplifier_combinator-build;0.1-SNAPSHOT docs produced in C:\Users\Vobis\Desktop\workspace\Simplifier_combinator\project\target\resolution-cache\reports\default-simplifier_combinator-build-docs.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#simplifier_combinator-build;0.1-SNAPSHOT pom produced in C:\Users\Vobis\Desktop\workspace\Simplifier_combinator\project\target\resolution-cache\reports\default-simplifier_combinator-build-pom.xml[0m
+[0m[[0mdebug[0m] [0m	report for default#simplifier_combinator-build;0.1-SNAPSHOT scala-tool produced in C:\Users\Vobis\Desktop\workspace\Simplifier_combinator\project\target\resolution-cache\reports\default-simplifier_combinator-build-scala-tool.xml[0m
+[0m[[0mdebug[0m] [0m	resolve done (2169ms resolve - 49ms download)[0m
 [0m[[0minfo[0m] [0mDone updating.[0m

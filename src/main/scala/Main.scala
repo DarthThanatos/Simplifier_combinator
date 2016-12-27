@@ -8,7 +8,6 @@ import simplifier.Simplifier
 object Main {
 
   def main(args: Array[String]) {
-      println("HEllo you")
       if(args.length == 0) {
         println("Usage: sbt \"run filename ...\""); 
         return
@@ -19,8 +18,9 @@ object Main {
       for (arg <- args) {
           try {
               println("Parsing file: " + arg)     
-              val reader = new FileReader(arg)
-              val parseResult = parser.parseAll(reader)
+              //val reader = new FileReader(arg)
+              //val parseResult = parser.parseAll(reader)
+              val parseResult = parser.parseAll(parser.const,"True")
               parseResult match {
                  case parser.Success(result: List[AST.Node], in) => {
                      println("\nAST:")
@@ -32,8 +32,10 @@ object Main {
                      println("\nProgram after optimization:")
                      println(simplifiedTree.toStr)
                  }
+                 case parser.Success(result : AST.TrueConst, in) => {println(result.toStr)}
                  case parser.NoSuccess(msg: String, in) => println("FAILURE " + parseResult)
               }
+              println("Hello" + parser.stringLiteral.toString())
           }
           catch {
               case ex: FileNotFoundException => println("Couldn't open file " + arg)

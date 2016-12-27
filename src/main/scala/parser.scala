@@ -40,7 +40,6 @@ class Parser extends JavaTokenParsers {
                                  "while\\b".r
 
   val floatLiteral: Parser[Double] = """\d+(\.\d*)|\.\d+""".r ^^ { _.toDouble }
-  
   val intLiteral: Parser[Integer] = """\d+""".r ^^ { _.toInt }
 
   def const: Parser[Node] = (
@@ -49,8 +48,11 @@ class Parser extends JavaTokenParsers {
       | stringLiteral ^^ StringConst
       | "True"  ^^^ TrueConst()
       | "False" ^^^ FalseConst()
+      | tuple 
   )
-
+  
+  def tuple : Parser[CustomizedTuple] = "(" ~> expr_list <~ ")" ^^ {case a : NodeList => CustomizedTuple(a)}
+  
   def parseAll(input: java.io.FileReader): ParseResult[List[Node]] = parseAll(program, input)
   
   // stands for def program: Parser[List[Node]] = rep(statement|newl)
@@ -65,10 +67,14 @@ class Parser extends JavaTokenParsers {
 
 
   def expression: Parser[Node] = (
-        ("lambda"~> id_list <~ ":") ~ expression ^^ { 
+ (   
+     "lambda"~> id_list <~ ":") ~ expression ^^ { 
               case formal_args ~ body => LambdaDef(IdList(formal_args), body)
         }
-      | or_expr
+      | or_expr 
+      | and_expr
+      | const
+      | not_expr
   )
 
 
@@ -224,12 +230,19 @@ class Parser extends JavaTokenParsers {
       case target ~ expression => Assignment(target, expression)
   }
 
+  
+  def elif_list : Parser[ElIfList] = rep(elif) ^^ ElIfList 
+  
+  def elif: Parser[ElIf] = "elif" ~> expression ~ (":" ~> suite) ^^ { case condition ~ body => ElIf(condition , body)}
+    
   def if_else_stmt: Parser[Node] = (
-        "if" ~> expression ~ (":" ~> suite) ~ ("else"~":" ~> suite).? ^^ {
-            case expression ~ suite1 ~ Some(suite2) => IfElseInstr(expression, suite1, suite2)
-            case expression ~ suite ~ None => IfInstr(expression, suite)
+        "if" ~> expression ~ (":" ~> suite) ~ elif_list.? ~ ("else"~":" ~> suite).? ^^ {
+            case expression ~ suite1 ~ Some(elifList) ~ Some(suite) => IfElifElse(expression,suite1, elifList,suite)
+            case expression ~ suite1 ~ None ~ Some(suite2)  => IfElseInstr(expression, suite1, suite2)
+            case expression ~ suite ~ None ~ None => IfInstr(expression, suite)
         }
   )
+  
 
   def while_stmt: Parser[WhileInstr] = "while" ~> expression ~ (":"~>suite) ^^ {
       case expression ~ suite => WhileInstr(expression, suite)

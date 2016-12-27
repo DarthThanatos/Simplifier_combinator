@@ -38,6 +38,10 @@ case class FalseConst() extends Node {
     override def toStr = "False"
 }
 
+case class CustomizedTuple(list : NodeList) extends Node{
+  override def toStr = "(" + list.toStr + ")" 
+}
+
 case class Variable(name: String) extends Node {
     override def toStr = name
 }
@@ -111,6 +115,30 @@ case class IfElseInstr(cond: Node, left: Node, right: Node) extends Node {
         str += right.toStr.replaceAll("(?m)^", indent)
         str
     }
+}
+
+case class IfElifElse(cond : Node, if_body : Node, elif_list: ElIfList, elseBody: Node) extends Node{
+  override def toStr = {
+        var str = "if " + cond.toStr + ":\n"
+        str += if_body.toStr.replaceAll("(?m)^", indent)
+        str += elif_list.toStr 
+        str += "\nelse:\n"
+        str += elseBody.toStr.replaceAll("(?m)^", indent)
+        str
+  }
+}
+
+case class ElIfList(list : List[ElIf]) extends Node{
+  override def toStr = {
+        list.map(_.toStr).mkString("", "\n", "")
+  }
+}
+
+case class ElIf(expression : Node, body: Node) extends Node{
+  override def toStr = {
+    var str = "elif " + expression.toStr + ":\n" + body.toStr 
+    str
+  }
 }
 
 case class WhileInstr(cond: Node, body: Node) extends Node {
