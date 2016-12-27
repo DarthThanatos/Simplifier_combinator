@@ -8,7 +8,7 @@ import simplifier.Simplifier
 object Main {
 
   def main(args: Array[String]) {
-      println("HEllo")
+      println("HEllo you")
       if(args.length == 0) {
         println("Usage: sbt \"run filename ...\""); 
         return
