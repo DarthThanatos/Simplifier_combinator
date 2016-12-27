@@ -2,3 +2,5 @@ eclipse
 run examples\gcd.spy
 test
 exit
+eclipse
+exit

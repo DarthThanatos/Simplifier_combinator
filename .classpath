@@ -3,16 +3,16 @@
   <classpathentry output="target\scala-2.11\classes" kind="src" path="src\main\java"/>
   <classpathentry output="target\scala-2.11\test-classes" kind="src" path="src\test\scala"/>
   <classpathentry output="target\scala-2.11\test-classes" kind="src" path="src\test\java"/>
-  <classpathentry kind="lib" path="C:\Users\Robert\.ivy2\cache\org.scala-lang.modules\scala-parser-combinators_2.11\bundles\scala-parser-combinators_2.11-1.0.2.jar"/>
-  <classpathentry kind="lib" path="C:\Users\Robert\.ivy2\cache\org.specs2\specs2-core_2.11\jars\specs2-core_2.11-2.4.14.jar"/>
+  <classpathentry kind="lib" path="C:\Users\Vobis\.ivy2\cache\org.scala-lang.modules\scala-parser-combinators_2.11\bundles\scala-parser-combinators_2.11-1.0.2.jar"/>
+  <classpathentry kind="lib" path="C:\Users\Vobis\.ivy2\cache\org.specs2\specs2-core_2.11\jars\specs2-core_2.11-2.4.14.jar"/>
   <classpathentry kind="con" path="org.scala-ide.sdt.launching.SCALA_CONTAINER"/>
-  <classpathentry kind="lib" path="C:\Users\Robert\.ivy2\cache\org.specs2\specs2-matcher_2.11\jars\specs2-matcher_2.11-2.4.14.jar"/>
-  <classpathentry kind="lib" path="C:\Users\Robert\.ivy2\cache\org.specs2\specs2-common_2.11\jars\specs2-common_2.11-2.4.14.jar"/>
-  <classpathentry kind="lib" path="C:\Users\Robert\.ivy2\cache\org.scalaz\scalaz-core_2.11\bundles\scalaz-core_2.11-7.1.0.jar"/>
-  <classpathentry kind="lib" path="C:\Users\Robert\.ivy2\cache\org.scala-lang.modules\scala-xml_2.11\bundles\scala-xml_2.11-1.0.2.jar"/>
-  <classpathentry kind="lib" path="C:\Users\Robert\.ivy2\cache\org.scalaz\scalaz-concurrent_2.11\bundles\scalaz-concurrent_2.11-7.1.0.jar"/>
-  <classpathentry kind="lib" path="C:\Users\Robert\.ivy2\cache\org.scalaz\scalaz-effect_2.11\bundles\scalaz-effect_2.11-7.1.0.jar"/>
-  <classpathentry kind="lib" path="C:\Users\Robert\.ivy2\cache\org.scalatest\scalatest_2.11\bundles\scalatest_2.11-2.2.1.jar"/>
+  <classpathentry kind="lib" path="C:\Users\Vobis\.ivy2\cache\org.specs2\specs2-matcher_2.11\jars\specs2-matcher_2.11-2.4.14.jar"/>
+  <classpathentry kind="lib" path="C:\Users\Vobis\.ivy2\cache\org.specs2\specs2-common_2.11\jars\specs2-common_2.11-2.4.14.jar"/>
+  <classpathentry kind="lib" path="C:\Users\Vobis\.ivy2\cache\org.scalaz\scalaz-core_2.11\bundles\scalaz-core_2.11-7.1.0.jar"/>
+  <classpathentry kind="lib" path="C:\Users\Vobis\.ivy2\cache\org.scala-lang.modules\scala-xml_2.11\bundles\scala-xml_2.11-1.0.2.jar"/>
+  <classpathentry kind="lib" path="C:\Users\Vobis\.ivy2\cache\org.scalaz\scalaz-concurrent_2.11\bundles\scalaz-concurrent_2.11-7.1.0.jar"/>
+  <classpathentry kind="lib" path="C:\Users\Vobis\.ivy2\cache\org.scalaz\scalaz-effect_2.11\bundles\scalaz-effect_2.11-7.1.0.jar"/>
+  <classpathentry kind="lib" path="C:\Users\Vobis\.ivy2\cache\org.scalatest\scalatest_2.11\bundles\scalatest_2.11-2.2.1.jar"/>
   <classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
   <classpathentry kind="output" path="bin"/>
 </classpath>
