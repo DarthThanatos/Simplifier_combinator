@@ -4,7 +4,7 @@
 		module="simplifier_combinator-build"
 		revision="0.1-SNAPSHOT"
 		status="integration"
-		publication="20161227114357"
+		publication="20161227182155"
 		e:sbtVersion="0.13" e:scalaVersion="2.10"
 	>
 		<description>

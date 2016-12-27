@@ -2,11 +2,27 @@
 import java.io.FileReader
 import java.io.FileNotFoundException
 import java.io.IOException
+import AST._
+import simplifier.Simplifier._
 
 import simplifier.Simplifier
 
 object Main {
 
+  def parseString(str: String, parser: Parser): Node = {
+
+    val parseResult = parser.parseAll(parser.program, str+"\n")
+
+    parseResult match {
+       case parser.Success(result: List[AST.Node], in) => 
+         {
+           println ("before: " + NodeList(result))
+           simplify(NodeList(result))
+         }
+       case parser.NoSuccess(msg: String, in) => throw new IllegalArgumentException("FAILURE Could not parse '" + str + "': " + msg)
+    }
+  }
+  
   def main(args: Array[String]) {
       if(args.length == 0) {
         println("Usage: sbt \"run filename ...\""); 
@@ -42,5 +58,6 @@ object Main {
               case ex: IOException => println("Couldn't read file " + arg)
           }
       }
+      println(parseString("x**y*x**z",parser))
   }
 }

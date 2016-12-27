@@ -10,176 +10,230 @@
 [0m[[0minfo[0m] [0m[37m[0m[37m[33mx[0m recognize power laws[0m[0m
 [0m[[31merror[0m] [0m   Got the exception java.lang.IllegalArgumentException: FAILURE Could not parse 'x**y*x**z': `{' expected but `*' found (Specs.scala:71)[0m
 [0m[[0minfo[0m] [0m[37m[0m[0m
-[0m[[0minfo[0m] [0m[37m[0m[37m[33mx[0m evaluate constants[0m[0m
-[0m[[31merror[0m] [0m   'NodeList(List(NodeList(List(BinExpr(+,IntNum(2),BinExpr(*,IntNum(3),IntNum(5)))))))'[0m
-[0m[[31merror[0m] [0m   [0m
-[0m[[31merror[0m] [0m    is not equal to [0m
-[0m[[31merror[0m] [0m   [0m
-[0m[[31merror[0m] [0m   'NodeList(List(NodeList(List(IntNum(17)))))' (Specs.scala:83)[0m
-[0m[[0minfo[0m] [0m [0m
-[0m[[31merror[0m] [0mExpected: NodeList(List(NodeList(List(IntNum(17)))))[0m
-[0m[[0minfo[0m] [0m [0m
-[0m[[31merror[0m] [0mActual:   NodeList(List(NodeList(List(BinExpr(+,IntNum(2),BinExpr(*,IntNum(3),IntNum(5)))))))[0m
-[0m[[0minfo[0m] [0m [0m
+[0m[[0minfo[0m] [0m[37m[0m[37m[31m![0m evaluate constants[0m[0m
+[0m[[31merror[0m] [0m   MatchError: : BinExpr(+,IntNum(2),BinExpr(*,IntNum(3),IntNum(5))) (of class AST.BinExpr)  (simplifier.scala:13)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$.simplify(simplifier.scala:13)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$.simplify(simplifier.scala:41)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$$anonfun$simplify$1.apply(simplifier.scala:28)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$$anonfun$simplify$1.apply(simplifier.scala:28)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$.simplify(simplifier.scala:28)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$.simplify(simplifier.scala:42)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$$anonfun$simplify$1.apply(simplifier.scala:28)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$$anonfun$simplify$1.apply(simplifier.scala:28)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$.simplify(simplifier.scala:28)[0m
+[0m[[31merror[0m] [0mparserSpec.parseString(Specs.scala:15)[0m
+[0m[[31merror[0m] [0mparserSpec$$anonfun$2$$anonfun$apply$52$$anonfun$apply$53.apply(Specs.scala:83)[0m
+[0m[[31merror[0m] [0mparserSpec$$anonfun$2$$anonfun$apply$52$$anonfun$apply$53.apply(Specs.scala:83)[0m
+[0m[[31merror[0m] [0mparserSpec$$anonfun$2$$anonfun$apply$52.apply(Specs.scala:83)[0m
+[0m[[31merror[0m] [0mparserSpec$$anonfun$2$$anonfun$apply$52.apply(Specs.scala:82)[0m
 [0m[[0minfo[0m] [0m[37m[0m[0m
-[0m[[0minfo[0m] [0m[37m[0m[37m[33mx[0m simplify division[0m[0m
-[0m[[31merror[0m] [0m   'NodeList(List(NodeList(List(BinExpr(/,Variable(x),Variable(x))))))'[0m
-[0m[[31merror[0m] [0m   [0m
-[0m[[31merror[0m] [0m    is not equal to [0m
-[0m[[31merror[0m] [0m   [0m
-[0m[[31merror[0m] [0m   'NodeList(List(NodeList(List(IntNum(1)))))' (Specs.scala:89)[0m
-[0m[[0minfo[0m] [0m [0m
-[0m[[31merror[0m] [0mExpected: ...List([I]n[tNum]([1])[]))))[][0m
-[0m[[0minfo[0m] [0m [0m
-[0m[[31merror[0m] [0mActual:   ...List([Bi]n[Expr]([/,Variable(x])[,Variable(x]))))[))][0m
-[0m[[0minfo[0m] [0m [0m
+[0m[[0minfo[0m] [0m[37m[0m[37m[31m![0m simplify division[0m[0m
+[0m[[31merror[0m] [0m   MatchError: : BinExpr(/,Variable(x),Variable(x)) (of class AST.BinExpr)  (simplifier.scala:13)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$.simplify(simplifier.scala:13)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$.simplify(simplifier.scala:41)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$$anonfun$simplify$1.apply(simplifier.scala:28)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$$anonfun$simplify$1.apply(simplifier.scala:28)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$.simplify(simplifier.scala:28)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$.simplify(simplifier.scala:42)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$$anonfun$simplify$1.apply(simplifier.scala:28)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$$anonfun$simplify$1.apply(simplifier.scala:28)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$.simplify(simplifier.scala:28)[0m
+[0m[[31merror[0m] [0mparserSpec.parseString(Specs.scala:15)[0m
+[0m[[31merror[0m] [0mparserSpec$$anonfun$2$$anonfun$apply$59$$anonfun$apply$60.apply(Specs.scala:89)[0m
+[0m[[31merror[0m] [0mparserSpec$$anonfun$2$$anonfun$apply$59$$anonfun$apply$60.apply(Specs.scala:89)[0m
+[0m[[31merror[0m] [0mparserSpec$$anonfun$2$$anonfun$apply$59.apply(Specs.scala:89)[0m
+[0m[[31merror[0m] [0mparserSpec$$anonfun$2$$anonfun$apply$59.apply(Specs.scala:88)[0m
 [0m[[0minfo[0m] [0m[37m[0m[0m
-[0m[[0minfo[0m] [0m[37m[0m[37m[33mx[0m simplify expressions[0m[0m
-[0m[[31merror[0m] [0m   'NodeList(List(NodeList(List(BinExpr(+,Variable(x),IntNum(0))))))'[0m
-[0m[[31merror[0m] [0m   [0m
-[0m[[31merror[0m] [0m    is not equal to [0m
-[0m[[31merror[0m] [0m   [0m
-[0m[[31merror[0m] [0m   'NodeList(List(NodeList(List(Variable(x)))))' (Specs.scala:99)[0m
-[0m[[0minfo[0m] [0m [0m
-[0m[[31merror[0m] [0mExpected: ...List([]Va...x)[]))))[][0m
-[0m[[0minfo[0m] [0m [0m
-[0m[[31merror[0m] [0mActual:   ...List([BinExpr(+,]Va...x)[,IntNum(0]))))[))][0m
-[0m[[0minfo[0m] [0m [0m
+[0m[[0minfo[0m] [0m[37m[0m[37m[31m![0m simplify expressions[0m[0m
+[0m[[31merror[0m] [0m   MatchError: : BinExpr(+,Variable(x),IntNum(0)) (of class AST.BinExpr)  (simplifier.scala:13)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$.simplify(simplifier.scala:13)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$.simplify(simplifier.scala:41)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$$anonfun$simplify$1.apply(simplifier.scala:28)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$$anonfun$simplify$1.apply(simplifier.scala:28)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$.simplify(simplifier.scala:28)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$.simplify(simplifier.scala:42)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$$anonfun$simplify$1.apply(simplifier.scala:28)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$$anonfun$simplify$1.apply(simplifier.scala:28)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$.simplify(simplifier.scala:28)[0m
+[0m[[31merror[0m] [0mparserSpec.parseString(Specs.scala:15)[0m
+[0m[[31merror[0m] [0mparserSpec$$anonfun$2$$anonfun$apply$74$$anonfun$apply$75.apply(Specs.scala:99)[0m
+[0m[[31merror[0m] [0mparserSpec$$anonfun$2$$anonfun$apply$74$$anonfun$apply$75.apply(Specs.scala:99)[0m
+[0m[[31merror[0m] [0mparserSpec$$anonfun$2$$anonfun$apply$74.apply(Specs.scala:99)[0m
+[0m[[31merror[0m] [0mparserSpec$$anonfun$2$$anonfun$apply$74.apply(Specs.scala:98)[0m
 [0m[[0minfo[0m] [0m[37m[0m[0m
-[0m[[0minfo[0m] [0m[37m[0m[37m[33mx[0m understand commutativity[0m[0m
-[0m[[31merror[0m] [0m   'NodeList(List(NodeList(List(BinExpr(-,BinExpr(+,Variable(x),IntNum(5)),Variable(x))))))'[0m
-[0m[[31merror[0m] [0m   [0m
-[0m[[31merror[0m] [0m    is not equal to [0m
-[0m[[31merror[0m] [0m   [0m
-[0m[[31merror[0m] [0m   'NodeList(List(NodeList(List(IntNum(5)))))' (Specs.scala:122)[0m
-[0m[[0minfo[0m] [0m [0m
-[0m[[31merror[0m] [0mExpected: NodeList(List(NodeList(List(IntNum(5)))))[0m
-[0m[[0minfo[0m] [0m [0m
-[0m[[31merror[0m] [0mActual:   NodeList(List(NodeList(List(BinExpr(-,BinExpr(+,Variable(x),IntNum(5)),Variable(x))))))[0m
-[0m[[0minfo[0m] [0m [0m
+[0m[[0minfo[0m] [0m[37m[0m[37m[31m![0m understand commutativity[0m[0m
+[0m[[31merror[0m] [0m   MatchError: : BinExpr(-,BinExpr(+,Variable(x),IntNum(5)),Variable(x)) (of class AST.BinExpr)  (simplifier.scala:13)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$.simplify(simplifier.scala:13)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$.simplify(simplifier.scala:41)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$$anonfun$simplify$1.apply(simplifier.scala:28)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$$anonfun$simplify$1.apply(simplifier.scala:28)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$.simplify(simplifier.scala:28)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$.simplify(simplifier.scala:42)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$$anonfun$simplify$1.apply(simplifier.scala:28)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$$anonfun$simplify$1.apply(simplifier.scala:28)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$.simplify(simplifier.scala:28)[0m
+[0m[[31merror[0m] [0mparserSpec.parseString(Specs.scala:15)[0m
+[0m[[31merror[0m] [0mparserSpec$$anonfun$2$$anonfun$apply$115$$anonfun$apply$116.apply(Specs.scala:122)[0m
+[0m[[31merror[0m] [0mparserSpec$$anonfun$2$$anonfun$apply$115$$anonfun$apply$116.apply(Specs.scala:122)[0m
+[0m[[31merror[0m] [0mparserSpec$$anonfun$2$$anonfun$apply$115.apply(Specs.scala:122)[0m
+[0m[[31merror[0m] [0mparserSpec$$anonfun$2$$anonfun$apply$115.apply(Specs.scala:121)[0m
 [0m[[0minfo[0m] [0m[37m[0m[0m
-[0m[[0minfo[0m] [0m[37m[0m[37m[33mx[0m understand distributive property of multiplication[0m[0m
-[0m[[31merror[0m] [0m   'NodeList(List(NodeList(List(BinExpr(-,BinExpr(*,IntNum(2),Variable(x)),Variable(x))))))'[0m
-[0m[[31merror[0m] [0m   [0m
-[0m[[31merror[0m] [0m    is not equal to [0m
-[0m[[31merror[0m] [0m   [0m
-[0m[[31merror[0m] [0m   'NodeList(List(NodeList(List(Variable(x)))))' (Specs.scala:128)[0m
-[0m[[0minfo[0m] [0m [0m
-[0m[[31merror[0m] [0mExpected: NodeList(List(NodeList(List(Variable(x)))))[0m
-[0m[[0minfo[0m] [0m [0m
-[0m[[31merror[0m] [0mActual:   NodeList(List(NodeList(List(BinExpr(-,BinExpr(*,IntNum(2),Variable(x)),Variable(x))))))[0m
-[0m[[0minfo[0m] [0m [0m
+[0m[[0minfo[0m] [0m[37m[0m[37m[31m![0m understand distributive property of multiplication[0m[0m
+[0m[[31merror[0m] [0m   MatchError: : BinExpr(-,BinExpr(*,IntNum(2),Variable(x)),Variable(x)) (of class AST.BinExpr)  (simplifier.scala:13)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$.simplify(simplifier.scala:13)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$.simplify(simplifier.scala:41)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$$anonfun$simplify$1.apply(simplifier.scala:28)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$$anonfun$simplify$1.apply(simplifier.scala:28)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$.simplify(simplifier.scala:28)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$.simplify(simplifier.scala:42)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$$anonfun$simplify$1.apply(simplifier.scala:28)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$$anonfun$simplify$1.apply(simplifier.scala:28)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$.simplify(simplifier.scala:28)[0m
+[0m[[31merror[0m] [0mparserSpec.parseString(Specs.scala:15)[0m
+[0m[[31merror[0m] [0mparserSpec$$anonfun$2$$anonfun$apply$122$$anonfun$apply$123.apply(Specs.scala:128)[0m
+[0m[[31merror[0m] [0mparserSpec$$anonfun$2$$anonfun$apply$122$$anonfun$apply$123.apply(Specs.scala:128)[0m
+[0m[[31merror[0m] [0mparserSpec$$anonfun$2$$anonfun$apply$122.apply(Specs.scala:128)[0m
+[0m[[31merror[0m] [0mparserSpec$$anonfun$2$$anonfun$apply$122.apply(Specs.scala:127)[0m
 [0m[[0minfo[0m] [0m[37m[0m[0m
-[0m[[0minfo[0m] [0m[37m[0m[37m[33mx[0m cancel double unary ops[0m[0m
-[0m[[31merror[0m] [0m   'NodeList(List(NodeList(List(Unary(not,Unary(not,Unary(not,Variable(x))))))))'[0m
-[0m[[31merror[0m] [0m   [0m
-[0m[[31merror[0m] [0m    is not equal to [0m
-[0m[[31merror[0m] [0m   [0m
-[0m[[31merror[0m] [0m   'NodeList(List(NodeList(List(Unary(not,Variable(x))))))' (Specs.scala:135)[0m
-[0m[[0minfo[0m] [0m [0m
-[0m[[31merror[0m] [0mExpected: ...(not,[]Va...))[][0m
-[0m[[0minfo[0m] [0m [0m
-[0m[[31merror[0m] [0mActual:   ...(not,[Unary(not,Unary(not,]Va...))[))][0m
-[0m[[0minfo[0m] [0m [0m
+[0m[[0minfo[0m] [0m[37m[0m[37m[31m![0m cancel double unary ops[0m[0m
+[0m[[31merror[0m] [0m   MatchError: : Unary(not,Unary(not,Unary(not,Variable(x)))) (of class AST.Unary)  (simplifier.scala:39)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$.simplify(simplifier.scala:39)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$$anonfun$simplify$1.apply(simplifier.scala:28)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$$anonfun$simplify$1.apply(simplifier.scala:28)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$.simplify(simplifier.scala:28)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$.simplify(simplifier.scala:42)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$$anonfun$simplify$1.apply(simplifier.scala:28)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$$anonfun$simplify$1.apply(simplifier.scala:28)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$.simplify(simplifier.scala:28)[0m
+[0m[[31merror[0m] [0mparserSpec.parseString(Specs.scala:15)[0m
+[0m[[31merror[0m] [0mparserSpec$$anonfun$2$$anonfun$apply$131$$anonfun$apply$132.apply(Specs.scala:135)[0m
+[0m[[31merror[0m] [0mparserSpec$$anonfun$2$$anonfun$apply$131$$anonfun$apply$132.apply(Specs.scala:135)[0m
+[0m[[31merror[0m] [0mparserSpec$$anonfun$2$$anonfun$apply$131.apply(Specs.scala:135)[0m
+[0m[[31merror[0m] [0mparserSpec$$anonfun$2$$anonfun$apply$131.apply(Specs.scala:134)[0m
 [0m[[0minfo[0m] [0m[37m[0m[0m
-[0m[[0minfo[0m] [0m[37m[0m[37m[33mx[0m get rid of not before comparisons[0m[0m
-[0m[[31merror[0m] [0m   'NodeList(List(NodeList(List(Unary(not,BinExpr(==,Variable(x),Variable(y)))))))'[0m
-[0m[[31merror[0m] [0m   [0m
-[0m[[31merror[0m] [0m    is not equal to [0m
-[0m[[31merror[0m] [0m   [0m
-[0m[[31merror[0m] [0m   'NodeList(List(NodeList(List(BinExpr(!=,Variable(x),Variable(y))))))' (Specs.scala:140)[0m
-[0m[[0minfo[0m] [0m [0m
-[0m[[31merror[0m] [0mExpected: ...List([]Bi...r([!]=,...))[][0m
-[0m[[0minfo[0m] [0m [0m
-[0m[[31merror[0m] [0mActual:   ...List([Unary(not,]Bi...r([=]=,...))[)][0m
-[0m[[0minfo[0m] [0m [0m
+[0m[[0minfo[0m] [0m[37m[0m[37m[31m![0m get rid of not before comparisons[0m[0m
+[0m[[31merror[0m] [0m   MatchError: : Unary(not,BinExpr(==,Variable(x),Variable(y))) (of class AST.Unary)  (simplifier.scala:39)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$.simplify(simplifier.scala:39)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$$anonfun$simplify$1.apply(simplifier.scala:28)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$$anonfun$simplify$1.apply(simplifier.scala:28)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$.simplify(simplifier.scala:28)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$.simplify(simplifier.scala:42)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$$anonfun$simplify$1.apply(simplifier.scala:28)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$$anonfun$simplify$1.apply(simplifier.scala:28)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$.simplify(simplifier.scala:28)[0m
+[0m[[31merror[0m] [0mparserSpec.parseString(Specs.scala:15)[0m
+[0m[[31merror[0m] [0mparserSpec$$anonfun$2$$anonfun$apply$136$$anonfun$apply$137.apply(Specs.scala:140)[0m
+[0m[[31merror[0m] [0mparserSpec$$anonfun$2$$anonfun$apply$136$$anonfun$apply$137.apply(Specs.scala:140)[0m
+[0m[[31merror[0m] [0mparserSpec$$anonfun$2$$anonfun$apply$136.apply(Specs.scala:140)[0m
+[0m[[31merror[0m] [0mparserSpec$$anonfun$2$$anonfun$apply$136.apply(Specs.scala:139)[0m
 [0m[[0minfo[0m] [0m[37m[0m[0m
-[0m[[0minfo[0m] [0m[37m[0m[37m[33mx[0m remove duplicate keys[0m[0m
-[0m[[31merror[0m] [0m   'NodeList(List(NodeList(List(KeyDatumList(List(KeyDatum(StringConst("a"),IntNum(1)), KeyDatum(StringConst("b"),IntNum(2)), KeyDatum(StringConst("a"),IntNum(3))))))))'[0m
-[0m[[31merror[0m] [0m   [0m
-[0m[[31merror[0m] [0m    is not equal to [0m
-[0m[[31merror[0m] [0m   [0m
-[0m[[31merror[0m] [0m   'NodeList(List(NodeList(List(KeyDatumList(List(KeyDatum(StringConst("a"),IntNum(3)), KeyDatum(StringConst("b"),IntNum(2))))))))' (Specs.scala:149)[0m
-[0m[[0minfo[0m] [0m [0m
-[0m[[31merror[0m] [0mExpected: ...tNum([3]))...))[])[])))))[][0m
-[0m[[0minfo[0m] [0m [0m
-[0m[[31merror[0m] [0mActual:   ...tNum([1]))...))[, KeyDatum(StringConst("a"])[,IntNum(3])))))[)))][0m
-[0m[[0minfo[0m] [0m [0m
+[0m[[0minfo[0m] [0m[37m[0m[37m[31m![0m remove duplicate keys[0m[0m
+[0m[[31merror[0m] [0m   MatchError: : KeyDatumList(List(KeyDatum(StringConst("a"),IntNum(1)), KeyDatum(StringConst("b"),IntNum(2)), KeyDatum(StringConst("a"),IntNum(3)))) (of class AST.KeyDatumList)  (simplifier.scala:39)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$.simplify(simplifier.scala:39)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$$anonfun$simplify$1.apply(simplifier.scala:28)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$$anonfun$simplify$1.apply(simplifier.scala:28)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$.simplify(simplifier.scala:28)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$.simplify(simplifier.scala:42)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$$anonfun$simplify$1.apply(simplifier.scala:28)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$$anonfun$simplify$1.apply(simplifier.scala:28)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$.simplify(simplifier.scala:28)[0m
+[0m[[31merror[0m] [0mparserSpec.parseString(Specs.scala:15)[0m
+[0m[[31merror[0m] [0mparserSpec$$anonfun$2$$anonfun$apply$149$$anonfun$apply$150.apply(Specs.scala:149)[0m
+[0m[[31merror[0m] [0mparserSpec$$anonfun$2$$anonfun$apply$149$$anonfun$apply$150.apply(Specs.scala:149)[0m
+[0m[[31merror[0m] [0mparserSpec$$anonfun$2$$anonfun$apply$149.apply(Specs.scala:149)[0m
+[0m[[31merror[0m] [0mparserSpec$$anonfun$2$$anonfun$apply$149.apply(Specs.scala:149)[0m
 [0m[[0minfo[0m] [0m[37m[0m[0m
-[0m[[0minfo[0m] [0m[37m[0m[37m[33mx[0m concatenate lists[0m[0m
-[0m[[31merror[0m] [0m   'NodeList(List(NodeList(List(BinExpr(+,ElemList(List()),ElemList(List()))))))'[0m
-[0m[[31merror[0m] [0m   [0m
-[0m[[31merror[0m] [0m    is not equal to [0m
-[0m[[31merror[0m] [0m   [0m
-[0m[[31merror[0m] [0m   'NodeList(List(NodeList(List(ElemList(List())))))' (Specs.scala:153)[0m
-[0m[[0minfo[0m] [0m [0m
-[0m[[31merror[0m] [0mExpected: ...List([]E[]le...))[]))))[][0m
-[0m[[0minfo[0m] [0m [0m
-[0m[[31merror[0m] [0mActual:   ...List([Bin]E[xpr(+,E]le...))[,ElemList(List(]))))[)))][0m
-[0m[[0minfo[0m] [0m [0m
+[0m[[0minfo[0m] [0m[37m[0m[37m[31m![0m concatenate lists[0m[0m
+[0m[[31merror[0m] [0m   MatchError: : BinExpr(+,ElemList(List()),ElemList(List())) (of class AST.BinExpr)  (simplifier.scala:13)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$.simplify(simplifier.scala:13)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$.simplify(simplifier.scala:41)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$$anonfun$simplify$1.apply(simplifier.scala:28)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$$anonfun$simplify$1.apply(simplifier.scala:28)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$.simplify(simplifier.scala:28)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$.simplify(simplifier.scala:42)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$$anonfun$simplify$1.apply(simplifier.scala:28)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$$anonfun$simplify$1.apply(simplifier.scala:28)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$.simplify(simplifier.scala:28)[0m
+[0m[[31merror[0m] [0mparserSpec.parseString(Specs.scala:15)[0m
+[0m[[31merror[0m] [0mparserSpec$$anonfun$2$$anonfun$apply$152$$anonfun$apply$153.apply(Specs.scala:153)[0m
+[0m[[31merror[0m] [0mparserSpec$$anonfun$2$$anonfun$apply$152$$anonfun$apply$153.apply(Specs.scala:153)[0m
+[0m[[31merror[0m] [0mparserSpec$$anonfun$2$$anonfun$apply$152.apply(Specs.scala:153)[0m
+[0m[[31merror[0m] [0mparserSpec$$anonfun$2$$anonfun$apply$152.apply(Specs.scala:152)[0m
 [0m[[0minfo[0m] [0m[37m[0m[0m
-[0m[[0minfo[0m] [0m[37m[0m[37m[33mx[0m remove no effect instructions[0m[0m
-[0m[[31merror[0m] [0m   'NodeList(List(NodeList(List(Assignment(Variable(x),Variable(x))))))'[0m
-[0m[[31merror[0m] [0m   [0m
-[0m[[31merror[0m] [0m    is not equal to [0m
-[0m[[31merror[0m] [0m   [0m
-[0m[[31merror[0m] [0m   'NodeList(List())' (Specs.scala:160)[0m
-[0m[[0minfo[0m] [0m [0m
-[0m[[31merror[0m] [0mExpected: NodeList(List())[0m
-[0m[[0minfo[0m] [0m [0m
-[0m[[31merror[0m] [0mActual:   NodeList(List(NodeList(List(Assignment(Variable(x),Variable(x))))))[0m
-[0m[[0minfo[0m] [0m [0m
+[0m[[0minfo[0m] [0m[37m[0m[37m[31m![0m remove no effect instructions[0m[0m
+[0m[[31merror[0m] [0m   MatchError: : Assignment(Variable(x),Variable(x)) (of class AST.Assignment)  (simplifier.scala:39)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$.simplify(simplifier.scala:39)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$$anonfun$simplify$1.apply(simplifier.scala:28)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$$anonfun$simplify$1.apply(simplifier.scala:28)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$.simplify(simplifier.scala:28)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$.simplify(simplifier.scala:42)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$$anonfun$simplify$1.apply(simplifier.scala:28)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$$anonfun$simplify$1.apply(simplifier.scala:28)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$.simplify(simplifier.scala:28)[0m
+[0m[[31merror[0m] [0mparserSpec.parseString(Specs.scala:15)[0m
+[0m[[31merror[0m] [0mparserSpec$$anonfun$2$$anonfun$apply$161$$anonfun$apply$162.apply(Specs.scala:160)[0m
+[0m[[31merror[0m] [0mparserSpec$$anonfun$2$$anonfun$apply$161$$anonfun$apply$162.apply(Specs.scala:160)[0m
+[0m[[31merror[0m] [0mparserSpec$$anonfun$2$$anonfun$apply$161.apply(Specs.scala:160)[0m
+[0m[[31merror[0m] [0mparserSpec$$anonfun$2$$anonfun$apply$161.apply(Specs.scala:160)[0m
 [0m[[0minfo[0m] [0m[37m[0m[0m
-[0m[[0minfo[0m] [0m[37m[0m[37m[33mx[0m remove dead assignments[0m[0m
-[0m[[31merror[0m] [0m   'NodeList(List(NodeList(List(Assignment(Variable(x),Variable(a)), Assignment(Variable(x),Variable(b))))))'[0m
-[0m[[31merror[0m] [0m   [0m
-[0m[[31merror[0m] [0m    is not equal to [0m
-[0m[[31merror[0m] [0m   [0m
-[0m[[31merror[0m] [0m   'NodeList(List(NodeList(List(Assignment(Variable(x),Variable(b))))))' (Specs.scala:164)[0m
-[0m[[0minfo[0m] [0m [0m
-[0m[[31merror[0m] [0mExpected: ...able([]b[])[])))))[][0m
-[0m[[0minfo[0m] [0m [0m
-[0m[[31merror[0m] [0mActual:   ...able([a)), Assignment(Varia]b[le(x])[,Variable(b])))))[)][0m
-[0m[[0minfo[0m] [0m [0m
+[0m[[0minfo[0m] [0m[37m[0m[37m[31m![0m remove dead assignments[0m[0m
+[0m[[31merror[0m] [0m   MatchError: : Assignment(Variable(x),Variable(a)) (of class AST.Assignment)  (simplifier.scala:39)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$.simplify(simplifier.scala:39)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$$anonfun$simplify$1.apply(simplifier.scala:28)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$$anonfun$simplify$1.apply(simplifier.scala:28)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$.simplify(simplifier.scala:28)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$.simplify(simplifier.scala:42)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$$anonfun$simplify$1.apply(simplifier.scala:28)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$$anonfun$simplify$1.apply(simplifier.scala:28)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$.simplify(simplifier.scala:28)[0m
+[0m[[31merror[0m] [0mparserSpec.parseString(Specs.scala:15)[0m
+[0m[[31merror[0m] [0mparserSpec$$anonfun$2$$anonfun$apply$164$$anonfun$apply$165.apply(Specs.scala:164)[0m
+[0m[[31merror[0m] [0mparserSpec$$anonfun$2$$anonfun$apply$164$$anonfun$apply$165.apply(Specs.scala:164)[0m
+[0m[[31merror[0m] [0mparserSpec$$anonfun$2$$anonfun$apply$164.apply(Specs.scala:164)[0m
+[0m[[31merror[0m] [0mparserSpec$$anonfun$2$$anonfun$apply$164.apply(Specs.scala:164)[0m
 [0m[[0minfo[0m] [0m[37m[0m[0m
-[0m[[0minfo[0m] [0m[37m[0m[37m[33mx[0m simplify if-else instruction with known condition[0m[0m
-[0m[[31merror[0m] [0m   'NodeList(List(IfElifElse(TrueConst(),NodeList(List(NodeList(List(Assignment(Variable(x),IntNum(1)))))),ElIfList(List()),NodeList(List(NodeList(List(Assignment(Variable(x),IntNum(0)))))))))'[0m
-[0m[[31merror[0m] [0m   [0m
-[0m[[31merror[0m] [0m    is not equal to [0m
-[0m[[31merror[0m] [0m   [0m
-[0m[[31merror[0m] [0m   'NodeList(List(NodeList(List(Assignment(Variable(x),IntNum(1))))))' (Specs.scala:177)[0m
-[0m[[0minfo[0m] [0m [0m
-[0m[[31merror[0m] [0mExpected: NodeList(List(NodeList(List(Assignment(Variable(x),IntNum(1))))))[0m
-[0m[[0minfo[0m] [0m [0m
-[0m[[31merror[0m] [0mActual:   NodeList(List(IfElifElse(TrueConst(),NodeList(List(NodeList(List(Assignment(Variable(x),IntNum(1)))))),ElIfList(List()),NodeList(List(NodeList(List(Assignment(Variable(x),IntNum(0)))))))))[0m
-[0m[[0minfo[0m] [0m [0m
+[0m[[0minfo[0m] [0m[37m[0m[37m[31m![0m simplify if-else instruction with known condition[0m[0m
+[0m[[31merror[0m] [0m   MatchError: : IfElifElse(TrueConst(),NodeList(List(NodeList(List(Assignment(Variable(x),IntNum(1)))))),ElIfList(List()),NodeList(List(NodeList(List(Assignment(Variable(x),IntNum(0))))))) (of class AST.IfElifElse)  (simplifier.scala:39)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$.simplify(simplifier.scala:39)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$$anonfun$simplify$1.apply(simplifier.scala:28)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$$anonfun$simplify$1.apply(simplifier.scala:28)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$.simplify(simplifier.scala:28)[0m
+[0m[[31merror[0m] [0mparserSpec.parseString(Specs.scala:15)[0m
+[0m[[31merror[0m] [0mparserSpec$$anonfun$2$$anonfun$apply$167$$anonfun$apply$168.apply(Specs.scala:177)[0m
+[0m[[31merror[0m] [0mparserSpec$$anonfun$2$$anonfun$apply$167$$anonfun$apply$168.apply(Specs.scala:177)[0m
+[0m[[31merror[0m] [0mparserSpec$$anonfun$2$$anonfun$apply$167.apply(Specs.scala:177)[0m
+[0m[[31merror[0m] [0mparserSpec$$anonfun$2$$anonfun$apply$167.apply(Specs.scala:167)[0m
 [0m[[0minfo[0m] [0m[37m[0m[0m
-[0m[[0minfo[0m] [0m[37m[0m[37m[33mx[0m simplify if-else expression with known condition[0m[0m
-[0m[[31merror[0m] [0m   'NodeList(List(NodeList(List(Assignment(Variable(x),IfElseExpr(TrueConst(),Variable(y),Variable(z)))))))'[0m
-[0m[[31merror[0m] [0m   [0m
-[0m[[31merror[0m] [0m    is not equal to [0m
-[0m[[31merror[0m] [0m   [0m
-[0m[[31merror[0m] [0m   'NodeList(List(NodeList(List(Assignment(Variable(x),Variable(y))))))' (Specs.scala:183)[0m
-[0m[[0minfo[0m] [0m [0m
-[0m[[31merror[0m] [0mExpected: ...e(x),[]Va...y)[])))))[][0m
-[0m[[0minfo[0m] [0m [0m
-[0m[[31merror[0m] [0mActual:   ...e(x),[IfElseExpr(TrueConst(),]Va...y)[,Variable(z])))))[))][0m
-[0m[[0minfo[0m] [0m [0m
+[0m[[0minfo[0m] [0m[37m[0m[37m[31m![0m simplify if-else expression with known condition[0m[0m
+[0m[[31merror[0m] [0m   MatchError: : Assignment(Variable(x),IfElseExpr(TrueConst(),Variable(y),Variable(z))) (of class AST.Assignment)  (simplifier.scala:39)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$.simplify(simplifier.scala:39)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$$anonfun$simplify$1.apply(simplifier.scala:28)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$$anonfun$simplify$1.apply(simplifier.scala:28)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$.simplify(simplifier.scala:28)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$.simplify(simplifier.scala:42)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$$anonfun$simplify$1.apply(simplifier.scala:28)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$$anonfun$simplify$1.apply(simplifier.scala:28)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$.simplify(simplifier.scala:28)[0m
+[0m[[31merror[0m] [0mparserSpec.parseString(Specs.scala:15)[0m
+[0m[[31merror[0m] [0mparserSpec$$anonfun$2$$anonfun$apply$172$$anonfun$apply$173.apply(Specs.scala:183)[0m
+[0m[[31merror[0m] [0mparserSpec$$anonfun$2$$anonfun$apply$172$$anonfun$apply$173.apply(Specs.scala:183)[0m
+[0m[[31merror[0m] [0mparserSpec$$anonfun$2$$anonfun$apply$172.apply(Specs.scala:183)[0m
+[0m[[31merror[0m] [0mparserSpec$$anonfun$2$$anonfun$apply$172.apply(Specs.scala:181)[0m
 [0m[[0minfo[0m] [0m[37m[0m[0m
-[0m[[0minfo[0m] [0m[37m[0m[37m[33mx[0m remove while loop with False condition[0m[0m
-[0m[[31merror[0m] [0m   'NodeList(List(WhileInstr(FalseConst(),NodeList(List(NodeList(List(Assignment(Variable(x),BinExpr(+,Variable(x),IntNum(1))))))))))'[0m
-[0m[[31merror[0m] [0m   [0m
-[0m[[31merror[0m] [0m    is not equal to [0m
-[0m[[31merror[0m] [0m   [0m
-[0m[[31merror[0m] [0m   'NodeList(List())' (Specs.scala:193)[0m
-[0m[[0minfo[0m] [0m [0m
-[0m[[31merror[0m] [0mExpected: NodeList(List())[0m
-[0m[[0minfo[0m] [0m [0m
-[0m[[31merror[0m] [0mActual:   NodeList(List(WhileInstr(FalseConst(),NodeList(List(NodeList(List(Assignment(Variable(x),BinExpr(+,Variable(x),IntNum(1))))))))))[0m
-[0m[[0minfo[0m] [0m [0m
+[0m[[0minfo[0m] [0m[37m[0m[37m[31m![0m remove while loop with False condition[0m[0m
+[0m[[31merror[0m] [0m   MatchError: : WhileInstr(FalseConst(),NodeList(List(NodeList(List(Assignment(Variable(x),BinExpr(+,Variable(x),IntNum(1)))))))) (of class AST.WhileInstr)  (simplifier.scala:39)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$.simplify(simplifier.scala:39)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$$anonfun$simplify$1.apply(simplifier.scala:28)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$$anonfun$simplify$1.apply(simplifier.scala:28)[0m
+[0m[[31merror[0m] [0msimplifier.Simplifier$.simplify(simplifier.scala:28)[0m
+[0m[[31merror[0m] [0mparserSpec.parseString(Specs.scala:15)[0m
+[0m[[31merror[0m] [0mparserSpec$$anonfun$2$$anonfun$apply$177$$anonfun$apply$178.apply(Specs.scala:193)[0m
+[0m[[31merror[0m] [0mparserSpec$$anonfun$2$$anonfun$apply$177$$anonfun$apply$178.apply(Specs.scala:193)[0m
+[0m[[31merror[0m] [0mparserSpec$$anonfun$2$$anonfun$apply$177.apply(Specs.scala:193)[0m
+[0m[[31merror[0m] [0mparserSpec$$anonfun$2$$anonfun$apply$177.apply(Specs.scala:187)[0m
 [0m[[0minfo[0m] [0m[37m[0m[0m
 [0m[[0minfo[0m] [0m[37m[0m[37m[0m[0m
 [0m[[0minfo[0m] [0m[37m[0mTotal for specification parserSpec[0m
-[0m[[0minfo[0m] [0m[36mFinished in 79 ms[0m[0m
-[0m[[0minfo[0m] [0m[36m[0m[36m19 examples, 15 failures, 0 error[0m[0m
+[0m[[0minfo[0m] [0m[36mFinished in 310 ms[0m[0m
+[0m[[0minfo[0m] [0m[36m[0m[36m19 examples, 1 failure, 14 errors[0m[0m
 [0m[[0minfo[0m] [0m [0m

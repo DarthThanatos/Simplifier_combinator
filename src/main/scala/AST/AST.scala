@@ -39,7 +39,7 @@ case class FalseConst() extends Node {
 }
 
 case class CustomizedTuple(list : NodeList) extends Node{
-  override def toStr = "(" + list.toStr + ")" 
+  override def toStr = "customized tuple (" + list.toStr + ")" 
 }
 
 case class Variable(name: String) extends Node {
@@ -60,6 +60,12 @@ case class Unary(op: String, expr: Node) extends Node {
 
 }
 
+case class PovExpr(base: Node, exponent: Node) extends Node{
+  override def toStr = {
+    base.toStr + "**" + exponent.toStr
+  }
+}
+
 case class BinExpr(op: String, left: Node, right: Node) extends Node {
 
     override def toStr = {
@@ -75,7 +81,7 @@ case class BinExpr(op: String, left: Node, right: Node) extends Node {
             case r@Unary(_,_) => if(Priority.unary(r.op)<Priority.binary(op)) { rightStr = "(" + rightStr + ")" }
             case _ => 
         }
-        leftStr + " " + op + " " + rightStr
+        "bin expr  " + leftStr + " " + op + " " + rightStr
     }
 }
 
@@ -196,7 +202,7 @@ case class ClassDef(name: String, inherit_list: Node, suite: Node) extends Node 
 
 case class NodeList(list: List[Node]) extends Node {
     override def toStr = {
-        list.map(_.toStr).mkString("", "\n", "")
+        "node list " + list.map(_.toStr).mkString("", "\n", "")
     }
 }
 

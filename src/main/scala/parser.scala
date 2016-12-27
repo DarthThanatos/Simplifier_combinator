@@ -8,7 +8,8 @@ class Parser extends JavaTokenParsers {
   val precedenceList: List[List[String]] = List( 
       List("is", ">=", "<=", "==", "!=", "<", ">"), // order matters also within inner list, longer op should go before shorter one, e.g. "<=" before "<", if one is a prefix of another
       List("+", "-"),
-      List("*", "/", "%")
+      List("*", "/", "%"),
+      List("**")      
   )
 
   val minPrec = 0
@@ -71,12 +72,13 @@ class Parser extends JavaTokenParsers {
      "lambda"~> id_list <~ ":") ~ expression ^^ { 
               case formal_args ~ body => LambdaDef(IdList(formal_args), body)
         }
-      | or_expr 
-      | and_expr
-      | const
-      | not_expr
+      | or_expr
+      //| and_expr
+      //| const
+      //| not_expr
   )
-
+  
+  def pov_expr: Parser[Node] =  rep1sep (unary, "**") ^^ {case povs => povs.reduceRight((base,exponent) => BinExpr("**", base,exponent))}
 
   def or_expr: Parser[Node] = rep1sep(and_expr, "or") ^^ {
       case xs => (xs.head /: xs.tail) ( BinExpr("or", _, _) )
