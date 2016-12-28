@@ -54,8 +54,9 @@ class Parser extends JavaTokenParsers {
       | tuple 
   )}
   
-  def tuple : Parser[CustomizedTuple] = "(" ~> expr_list <~ ")" ^^ {case a : NodeList => CustomizedTuple(a)}
-  
+  //def tuple : Parser[CustomizedTuple] = "(" ~> expr_list <~ ")" ^^ {case a : NodeList => CustomizedTuple(a)} // but then (x+y)/(x+y) is too easy :D
+  def tuple : Parser[CustomizedTuple] = "(" ~> expression ~ ("," ~> expr_list <~ ")") ^^ {case expr ~ exprL => CustomizedTuple(NodeList(List(expr) ++ exprL.list))} 
+    
   def parseAll(input: java.io.FileReader): ParseResult[List[Node]] = parseAll(program, input)
   
   // stands for def program: Parser[List[Node]] = rep(statement|newl)
