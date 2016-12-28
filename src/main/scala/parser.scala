@@ -8,8 +8,8 @@ class Parser extends JavaTokenParsers {
   val precedenceList: List[List[String]] = List( 
       List("is", ">=", "<=", "==", "!=", "<", ">"), // order matters also within inner list, longer op should go before shorter one, e.g. "<=" before "<", if one is a prefix of another
       List("+", "-"),
-      List("*", "/", "%"),
-      List("**")      
+      List("*", "/", "%")
+      //,List("**")
   )
 
   val minPrec = 0
@@ -43,42 +43,60 @@ class Parser extends JavaTokenParsers {
   val floatLiteral: Parser[Double] = """\d+(\.\d*)|\.\d+""".r ^^ { _.toDouble }
   val intLiteral: Parser[Integer] = """\d+""".r ^^ { _.toInt }
 
-  def const: Parser[Node] = (
+  def const: Parser[Node] = {
+    println("const")
+    (
         floatLiteral ^^ FloatNum
       | intLiteral   ^^ IntNum
       | stringLiteral ^^ StringConst
       | "True"  ^^^ TrueConst()
       | "False" ^^^ FalseConst()
       | tuple 
-  )
+  )}
   
   def tuple : Parser[CustomizedTuple] = "(" ~> expr_list <~ ")" ^^ {case a : NodeList => CustomizedTuple(a)}
   
   def parseAll(input: java.io.FileReader): ParseResult[List[Node]] = parseAll(program, input)
   
   // stands for def program: Parser[List[Node]] = rep(statement|newl)
-  def program: Parser[List[Node]] = rep(newl) ~> rep(statement <~ rep(newl))
+  def program: Parser[List[Node]] = {println("program"); rep(newl) ~> rep(statement <~ rep(newl))}
 
 
 
-  def statement: Parser[Node] = (
+  def statement: Parser[Node] = {
+    println("Statement")
+    (
         simple_statement
       | compound_statement
-  )
+  )}
 
 
-  def expression: Parser[Node] = (
+  def expression: Parser[Node] = {
+    println("expr")
+    (
  (   
      "lambda"~> id_list <~ ":") ~ expression ^^ { 
               case formal_args ~ body => LambdaDef(IdList(formal_args), body)
         }
       | or_expr
+      | pov_expr
       //| and_expr
       //| const
       //| not_expr
   )
+  }
+  def f(base_exponent : ~[Node,Node]):BinExpr = { BinExpr ("**",base_exponent._1,base_exponent._2)} 
   
-  def pov_expr: Parser[Node] =  rep1sep (unary, "**") ^^ {case povs => povs.reduceRight((base,exponent) => BinExpr("**", base,exponent))}
+  def pov_expr: Parser[Node] =  {
+    println("pov")
+    rep1sep(unary, "**") ^^ { 
+    case povs => povs.reduceRight(
+        (base,exponent) => {
+          println(base,exponent); BinExpr("**", base, exponent)
+        }
+    )
+  }
+  }
 
   def or_expr: Parser[Node] = rep1sep(and_expr, "or") ^^ {
       case xs => (xs.head /: xs.tail) ( BinExpr("or", _, _) )
@@ -114,13 +132,16 @@ class Parser extends JavaTokenParsers {
   }
 
 
-  def binary(level: Int): Parser[Node] = (
-      if (level>maxPrec) unary
+  def binary(level: Int): Parser[Node] = {
+    println("binary")
+    (
+      if (level>maxPrec) pov_expr
       else chainl1( binary(level+1), binaryOp(level) ) // equivalent to binary(level+1) * binaryOp(level)
-  )
+  )}
 
   // operator precedence parsing takes place here
   def binaryOp(level: Int): Parser[((Node, Node) => BinExpr)] = {
+    println("binaryOp")
     precedenceList(level).map {
         op => op ^^^ { ((a:Node, b:Node) => BinExpr(op,a,b)) }
     }.reduce( (head, tail) => head | tail)
@@ -207,21 +228,25 @@ class Parser extends JavaTokenParsers {
                                                                                       // equivalent to (NodeList(_))
                                                                                       // equivalent to { case small_statement_list => NodeList(small_statement_list) }
 
-  def small_statement: Parser[Node] = (
+  def small_statement: Parser[Node] = {
+    println("small stmt")
+    (
         print_instr
       | return_instr
       | assignment
       | expression
-  )
+  )}
 
   def small_statement_list: Parser[List[Node]] = rep1sep(small_statement, ";")
 
-  def compound_statement: Parser[Node] = (
+  def compound_statement: Parser[Node] = {
+    println("cmpnd stmnt")
+    (
         if_else_stmt
       | while_stmt
       | funcdef
       | classdef
-  )
+  )}
 
 
   def print_instr: Parser[PrintInstr] = "print"~>expression ^^ PrintInstr

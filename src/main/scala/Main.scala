@@ -58,6 +58,8 @@ object Main {
               case ex: IOException => println("Couldn't read file " + arg)
           }
       }
-      println(parseString("x**y*x**z",parser))
+      println(parseString("2**3**2",parser))
+      println(parseString("x**2+2*x*y+y**2",parser)) 
+      //println(parseString("x**y*x**z",parser))
   }
 }
