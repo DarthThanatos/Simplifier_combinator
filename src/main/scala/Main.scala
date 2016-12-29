@@ -8,7 +8,40 @@ import simplifier.Simplifier._
 import simplifier.Simplifier
 
 object Main {
-
+  
+  def parseGcd(args : Array[String]){
+     if(args.length == 0) {
+        println("Usage: sbt \"run filename ...\""); 
+        return
+     }
+     val parser = new Parser()
+     for (arg <- args) {
+        try {
+            println("Parsing file: " + arg)     
+            val reader = new FileReader(arg)
+            val parseResult = parser.parseAll(reader)
+            parseResult match {
+               case parser.Success(result: List[AST.Node], in) => {
+                   println("\nAST:")
+                   println(parseResult)
+                   val tree = AST.NodeList(result)
+                   val simplifiedTree = simplifier.Simplifier.simplify(tree)
+                   println("\nAST after optimization:")
+                   println(simplifiedTree)
+                   println("\nProgram after optimization:")
+                   println(simplifiedTree.toStr)
+               }
+               case parser.Success(result : AST.TrueConst, in) => {println(result.toStr)}
+               case parser.NoSuccess(msg: String, in) => println("FAILURE " + parseResult)
+            }
+        }
+        catch {
+            case ex: FileNotFoundException => println("Couldn't open file " + arg)
+            case ex: IOException => println("Couldn't read file " + arg)
+        }
+    }
+  }
+  
   def parseString(str: String, parser: Parser): Node = {
 
     val parseResult = parser.parseAll(parser.program, str+"\n")
@@ -23,45 +56,60 @@ object Main {
     }
   }
   
+  
   def main(args: Array[String]) {
-      if(args.length == 0) {
-        println("Usage: sbt \"run filename ...\""); 
-        return
-      }
-
       val parser = new Parser()
-
-      for (arg <- args) {
-          try {
-              println("Parsing file: " + arg)     
-              //val reader = new FileReader(arg)
-              //val parseResult = parser.parseAll(reader)
-              val parseResult = parser.parseAll(parser.const,"True")
-              parseResult match {
-                 case parser.Success(result: List[AST.Node], in) => {
-                     println("\nAST:")
-                     println(parseResult)
-                     val tree = AST.NodeList(result)
-                     val simplifiedTree = simplifier.Simplifier.simplify(tree)
-                     println("\nAST after optimization:")
-                     println(simplifiedTree)
-                     println("\nProgram after optimization:")
-                     println(simplifiedTree.toStr)
-                 }
-                 case parser.Success(result : AST.TrueConst, in) => {println(result.toStr)}
-                 case parser.NoSuccess(msg: String, in) => println("FAILURE " + parseResult)
-              }
-              println("Hello" + parser.stringLiteral.toString())
-          }
-          catch {
-              case ex: FileNotFoundException => println("Couldn't open file " + arg)
-              case ex: IOException => println("Couldn't read file " + arg)
-          }
-      }
-      //println(parseString("(x,y)+(u,v)",parser))
-      //println(parseString("x**2+2*x*y+y**2",parser))
-      //println(parseString("not True",parser))
-      println(parseString("(x + y + k +z)/(k + x + z + y)",parser))
-      //println(parseString("x**y*x**z",parser))
+      println("after: " + parseString("2**3**2",parser) + " \n")
+      println("after: " + parseString("(x,y)+(u,v)",parser) + "\n")
+      println("after: " + parseString("x**0",parser) + "\n")
+      println("after: " + parseString("(x+y)**2",parser) + "\n")
+      println("after: " + parseString("((x+y)**2)**2 + 2*(x+y)**2*z + z**2 + 2**3**2",parser) + "\n")
+      println("after: " + parseString("x**2+2*x*y+y**2",parser) + "\n")
+      println("after: " + parseString("(x+y)**2-x**2-2*x*y",parser) + "\n")
+      println("after: " + parseString("(x+y)**2-(x-y)**2",parser) + "\n")
+      println("after: " + parseString("4*x*y",parser) + "\n")
+      println("after: " + parseString("(x**n)**m",parser) + "\n")
+      println("after: " + parseString("x/x",parser) + "\n")
+      println("after: " + parseString("(x+y*z)/(x+y*z)",parser) + "\n")
+      println("after: " + parseString("(x+y)/(y+x)",parser) + "\n")
+      println("after: " + parseString("(x+y*z)/(y*z+x)",parser) + "\n")
+      println("after: " + parseString("1/(1/x)",parser) + "\n")
+      println("after: " + parseString("1/(1/(x-z))",parser) + "\n")
+      println("after: " + parseString("x-x",parser) + "\n")
+      println("after: " + parseString("x*y+x*z+v*y+v*z",parser) + "\n")
+      println("after: " + parseString(" not not not  x",parser) + "\n")
+      println("after: " + parseString("{ \"a\": 1, \"b\": 2, \"a\": 3 }",parser) + "\n")
+      println("after: " + parseString("x=x",parser) + "\n")
+      
+            val if_stmt_str = """if %s:
+                   { 
+                      x = 1
+                   }
+                   else: 
+                   {
+                      x = 0
+                   } """
+            
+            
+      println("after: " + parseString(if_stmt_str.format("True"),parser) + "\n")
+      println("after: " + parseString(" -- x -- y",parser) + "\n")
+      /*println("after: " + parseString("x*(1/y)",parser) + "\n")
+      println("after: " + parseString("x*(1/y)",parser) + "\n")
+      println("after: " + parseString("x*(1/y)",parser) + "\n")
+      println("after: " + parseString("x*(1/y)",parser) + "\n")
+      println("after: " + parseString("x*(1/y)",parser) + "\n")
+      println("after: " + parseString("x*(1/y)",parser) + "\n")
+      println("after: " + parseString("x*(1/y)",parser) + "\n")
+      println("after: " + parseString("x*(1/y)",parser) + "\n")
+      println("after: " + parseString("x*(1/y)",parser) + "\n")
+      println("after: " + parseString("x*(1/y)",parser) + "\n")
+      println("after: " + parseString("x*(1/y)",parser) + "\n")
+      println("after: " + parseString("x*(1/y)",parser) + "\n")
+      println("after: " + parseString("x*(1/y)",parser) + "\n")
+      println("after: " + parseString("x*(1/y)",parser) + "\n")
+      println("after: " + parseString("x*(1/y)",parser) + "\n")
+      println("after: " + parseString("x*(1/y)",parser) + "\n")
+      println("after: " + parseString("x*(1/y)",parser) + "\n")
+      println("after: " + parseString("x*(1/y)",parser) + "\n")*/
   }
 }

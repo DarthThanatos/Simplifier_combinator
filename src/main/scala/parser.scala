@@ -41,10 +41,10 @@ class Parser extends JavaTokenParsers {
                                  "while\\b".r
 
   val floatLiteral: Parser[Double] = """\d+(\.\d*)|\.\d+""".r ^^ { _.toDouble }
-  val intLiteral: Parser[Integer] = """\d+""".r ^^ { _.toInt }
+  val intLiteral: Parser[Int] = """\d+""".r ^^ { _.toInt }
 
   def const: Parser[Node] = {
-    println("const")
+    //println("const")
     (
         floatLiteral ^^ FloatNum
       | intLiteral   ^^ IntNum
@@ -60,12 +60,15 @@ class Parser extends JavaTokenParsers {
   def parseAll(input: java.io.FileReader): ParseResult[List[Node]] = parseAll(program, input)
   
   // stands for def program: Parser[List[Node]] = rep(statement|newl)
-  def program: Parser[List[Node]] = {println("program"); rep(newl) ~> rep(statement <~ rep(newl))}
+  def program: Parser[List[Node]] = {
+    //println("program") 
+    rep(newl) ~> rep(statement <~ rep(newl))
+  }
 
 
 
   def statement: Parser[Node] = {
-    println("Statement")
+    //println("Statement")
     (
         simple_statement
       | compound_statement
@@ -73,7 +76,7 @@ class Parser extends JavaTokenParsers {
 
 
   def expression: Parser[Node] = {
-    println("expr")
+    //println("expr")
     (
  (   
      "lambda"~> id_list <~ ":") ~ expression ^^ { 
@@ -89,11 +92,12 @@ class Parser extends JavaTokenParsers {
   def f(base_exponent : ~[Node,Node]):BinExpr = { BinExpr ("**",base_exponent._1,base_exponent._2)} 
   
   def pov_expr: Parser[Node] =  {
-    println("pov")
+    //println("pov")
     rep1sep(unary, "**") ^^ { 
     case povs => povs.reduceRight(
         (base,exponent) => {
-          println(base,exponent); BinExpr("**", base, exponent)
+          //println(base,exponent)
+          BinExpr("**", base, exponent)
         }
     )
   }
@@ -134,7 +138,7 @@ class Parser extends JavaTokenParsers {
 
 
   def binary(level: Int): Parser[Node] = {
-    println("binary")
+    //println("binary")
     (
       if (level>maxPrec) pov_expr
       else chainl1( binary(level+1), binaryOp(level) ) // equivalent to binary(level+1) * binaryOp(level)
@@ -142,7 +146,7 @@ class Parser extends JavaTokenParsers {
 
   // operator precedence parsing takes place here
   def binaryOp(level: Int): Parser[((Node, Node) => BinExpr)] = {
-    println("binaryOp")
+    //println("binaryOp")
     precedenceList(level).map {
         op => op ^^^ { ((a:Node, b:Node) => BinExpr(op,a,b)) }
     }.reduce( (head, tail) => head | tail)
@@ -230,7 +234,7 @@ class Parser extends JavaTokenParsers {
                                                                                       // equivalent to { case small_statement_list => NodeList(small_statement_list) }
 
   def small_statement: Parser[Node] = {
-    println("small stmt")
+    //println("small stmt")
     (
         print_instr
       | return_instr
@@ -241,7 +245,7 @@ class Parser extends JavaTokenParsers {
   def small_statement_list: Parser[List[Node]] = rep1sep(small_statement, ";")
 
   def compound_statement: Parser[Node] = {
-    println("cmpnd stmnt")
+    //println("cmpnd stmnt")
     (
         if_else_stmt
       | while_stmt

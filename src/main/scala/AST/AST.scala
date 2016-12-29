@@ -18,7 +18,7 @@ sealed abstract class Node {
     val indent = " " * 4
 }
 
-case class IntNum(value: Integer) extends Node {
+case class IntNum(value: Int) extends Node {
     override def toStr = value.toString
 }
 
@@ -91,6 +91,10 @@ case class IfElseExpr(cond: Node, left: Node, right: Node) extends Node {
 
 case class Assignment(left: Node, right: Node) extends Node {
     override def toStr = left.toStr + " = " + right.toStr
+}
+
+case class EmptyNode() extends Node{
+  override def toString = "e "
 }
 
 case class Subscription(expr: Node, sub: Node) extends Node {
