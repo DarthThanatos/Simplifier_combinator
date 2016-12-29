@@ -12,62 +12,18 @@
 [0m[[0minfo[0m] [0m[37m[0m[32m+[0m simplify division[37m[0m[0m
 [0m[[0minfo[0m] [0m[37m[0m[32m+[0m simplify expressions[37m[0m[0m
 [0m[[0minfo[0m] [0m[37m[0m[32m+[0m understand commutativity[37m[0m[0m
-[0m[[0minfo[0m] [0m[37m[0m[37m[33mx[0m understand distributive property of multiplication[0m[0m
-[0m[[31merror[0m] [0m   'NodeList(List(NodeList(List(BinExpr(+,BinExpr(+,BinExpr(*,Variable(x),BinExpr(+,Variable(y),Variable(z))),BinExpr(*,Variable(v),Variable(y))),BinExpr(*,Variable(v),Variable(z)))))))'[0m
-[0m[[31merror[0m] [0m   [0m
-[0m[[31merror[0m] [0m    is not equal to [0m
-[0m[[31merror[0m] [0m   [0m
-[0m[[31merror[0m] [0m   'NodeList(List(NodeList(List(BinExpr(*,BinExpr(+,Variable(x),Variable(v)),BinExpr(+,Variable(y),Variable(z)))))))' (Specs.scala:131)[0m
-[0m[[0minfo[0m] [0m [0m
-[0m[[31merror[0m] [0mExpected: ...Expr([*],B...+,[]Va...),[]Va...e([v])[])[],B...r([+],V...e([]y)[],[]Va...e([]z))))...[0m
-[0m[[0minfo[0m] [0m [0m
-[0m[[31merror[0m] [0mActual:   ...Expr([+],B...+,[BinExpr(*,]Va...),[BinExpr(+,]Va...e([y])[,Variable(z])[))],B...r([*],V...e([v),Variable(]y)[))],[BinExpr(*,]Va...e([v),Variable(]z))))...[0m
-[0m[[0minfo[0m] [0m [0m
-[0m[[0minfo[0m] [0m[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[32m+[0m understand distributive property of multiplication[37m[0m[0m
 [0m[[0minfo[0m] [0m[37m[0m[32m+[0m cancel double unary ops[37m[0m[0m
 [0m[[0minfo[0m] [0m[37m[0m[32m+[0m get rid of not before comparisons[37m[0m[0m
 [0m[[0minfo[0m] [0m[37m[0m[32m+[0m remove duplicate keys[37m[0m[0m
 [0m[[0minfo[0m] [0m[37m[0m[32m+[0m concatenate lists[37m[0m[0m
 [0m[[0minfo[0m] [0m[37m[0m[32m+[0m remove no effect instructions[37m[0m[0m
 [0m[[0minfo[0m] [0m[37m[0m[32m+[0m remove dead assignments[37m[0m[0m
-[0m[[0minfo[0m] [0m[37m[0m[37m[33mx[0m simplify if-else instruction with known condition[0m[0m
-[0m[[31merror[0m] [0m   'NodeList(List(IfElifElse(TrueConst(),NodeList(List(NodeList(List(Assignment(Variable(x),IntNum(1)))))),ElIfList(List()),NodeList(List(NodeList(List(Assignment(Variable(x),IntNum(0)))))))))'[0m
-[0m[[31merror[0m] [0m   [0m
-[0m[[31merror[0m] [0m    is not equal to [0m
-[0m[[31merror[0m] [0m   [0m
-[0m[[31merror[0m] [0m   'NodeList(List(NodeList(List(Assignment(Variable(x),IntNum(1))))))' (Specs.scala:177)[0m
-[0m[[0minfo[0m] [0m [0m
-[0m[[31merror[0m] [0mExpected: NodeList(List(NodeList(List(Assignment(Variable(x),IntNum(1))))))[0m
-[0m[[0minfo[0m] [0m [0m
-[0m[[31merror[0m] [0mActual:   NodeList(List(IfElifElse(TrueConst(),NodeList(List(NodeList(List(Assignment(Variable(x),IntNum(1)))))),ElIfList(List()),NodeList(List(NodeList(List(Assignment(Variable(x),IntNum(0)))))))))[0m
-[0m[[0minfo[0m] [0m [0m
-[0m[[0minfo[0m] [0m[37m[0m[0m
-[0m[[0minfo[0m] [0m[37m[0m[37m[33mx[0m simplify if-else expression with known condition[0m[0m
-[0m[[31merror[0m] [0m   'NodeList(List(NodeList(List(Assignment(Variable(x),IfElseExpr(TrueConst(),Variable(y),Variable(z)))))))'[0m
-[0m[[31merror[0m] [0m   [0m
-[0m[[31merror[0m] [0m    is not equal to [0m
-[0m[[31merror[0m] [0m   [0m
-[0m[[31merror[0m] [0m   'NodeList(List(NodeList(List(Assignment(Variable(x),Variable(y))))))' (Specs.scala:183)[0m
-[0m[[0minfo[0m] [0m [0m
-[0m[[31merror[0m] [0mExpected: ...e(x),[]Va...y)[])))))[][0m
-[0m[[0minfo[0m] [0m [0m
-[0m[[31merror[0m] [0mActual:   ...e(x),[IfElseExpr(TrueConst(),]Va...y)[,Variable(z])))))[))][0m
-[0m[[0minfo[0m] [0m [0m
-[0m[[0minfo[0m] [0m[37m[0m[0m
-[0m[[0minfo[0m] [0m[37m[0m[37m[33mx[0m remove while loop with False condition[0m[0m
-[0m[[31merror[0m] [0m   'NodeList(List(WhileInstr(FalseConst(),NodeList(List(NodeList(List(Assignment(Variable(x),BinExpr(+,Variable(x),IntNum(1))))))))))'[0m
-[0m[[31merror[0m] [0m   [0m
-[0m[[31merror[0m] [0m    is not equal to [0m
-[0m[[31merror[0m] [0m   [0m
-[0m[[31merror[0m] [0m   'e ' (Specs.scala:193)[0m
-[0m[[0minfo[0m] [0m [0m
-[0m[[31merror[0m] [0mExpected: e [0m
-[0m[[0minfo[0m] [0m [0m
-[0m[[31merror[0m] [0mActual:   NodeList(List(WhileInstr(FalseConst(),NodeList(List(NodeList(List(Assignment(Variable(x),BinExpr(+,Variable(x),IntNum(1))))))))))[0m
-[0m[[0minfo[0m] [0m [0m
-[0m[[0minfo[0m] [0m[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[32m+[0m simplify if-else instruction with known condition[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[32m+[0m simplify if-else expression with known condition[37m[0m[0m
+[0m[[0minfo[0m] [0m[37m[0m[32m+[0m remove while loop with False condition[37m[0m[0m
 [0m[[0minfo[0m] [0m[37m[0m[37m[0m[0m
 [0m[[0minfo[0m] [0m[37m[0mTotal for specification parserSpec[0m
-[0m[[0minfo[0m] [0m[36mFinished in 25 ms[0m[0m
-[0m[[0minfo[0m] [0m[36m[0m[36m19 examples, 4 failures, 0 error[0m[0m
+[0m[[0minfo[0m] [0m[36mFinished in 130 ms[0m[0m
+[0m[[0minfo[0m] [0m[36m[0m[36m19 examples, 0 failure, 0 error[0m[0m
 [0m[[0minfo[0m] [0m [0m

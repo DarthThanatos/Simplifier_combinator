@@ -76,7 +76,6 @@ object Main {
       println("after: " + parseString("1/(1/x)",parser) + "\n")
       println("after: " + parseString("1/(1/(x-z))",parser) + "\n")
       println("after: " + parseString("x-x",parser) + "\n")
-      println("after: " + parseString("x*y+x*z+v*y+v*z",parser) + "\n")
       println("after: " + parseString(" not not not  x",parser) + "\n")
       println("after: " + parseString("{ \"a\": 1, \"b\": 2, \"a\": 3 }",parser) + "\n")
       println("after: " + parseString("x=x",parser) + "\n")
@@ -92,9 +91,19 @@ object Main {
             
             
       println("after: " + parseString(if_stmt_str.format("True"),parser) + "\n")
-      println("after: " + parseString(" -- x -- y",parser) + "\n")
+      println("after: " + parseString(if_stmt_str.format("False"),parser) + "\n")
+      
+      val if_expr_str = "x = y if %s else z"
+      println("after: " + parseString(if_expr_str.format("True"),parser) + "\n")
+            val str = """while False:
+                   { 
+                      x = x + 1
+                   } """
+      println("after: " + parseString(str,parser) + "\n")
+      println("after: " + parseString("",parser) + "\n")
+      println("after: " + parseString("x*y+x*z+v*y+v*z",parser) + "\n")
+      //println("after: " + parseString(" -- x -- y",parser) + "\n")
       /*println("after: " + parseString("x*(1/y)",parser) + "\n")
-      println("after: " + parseString("x*(1/y)",parser) + "\n")
       println("after: " + parseString("x*(1/y)",parser) + "\n")
       println("after: " + parseString("x*(1/y)",parser) + "\n")
       println("after: " + parseString("x*(1/y)",parser) + "\n")

@@ -12,23 +12,27 @@ object Simplifier {
   def simplifyBinRek(node: BinExpr) : Node = {
       println("bin rek: " + node)
       node match{
+      //parseString("x*y + x*z + v*y + v*z") mustEqual parseString("(x+v)*(y+z)")
+      case BinExpr("+",BinExpr("+", BinExpr("+", BinExpr("*",x1,y1),BinExpr("*",x2,z1)),BinExpr("*",v1,y2)),BinExpr("*",v2,z2)) 
+      if x1 == x2 && y1 == y2 && z1 == z2 && v1 == v2 => 
+        BinExpr("*", BinExpr("+",x1,v1), BinExpr("+",y1,z1))
       case BinExpr(op : String, left : BinExpr, right: BinExpr) => {
-        //println("bin rek both")
+        println("bin rek both")
         val simplified_left: Node = simplifyBinRek(left)
         val simplified_right : Node = simplifyBinRek(right)
         simplify(BinExpr(op, simplified_left, simplified_right))
       }
       case BinExpr(op : String, left : Node ,right: BinExpr) => {
-        //println("bin rek right exp: " + left + right)
+        println("bin rek right exp: " + left + right)
         val simplified_right : Node = simplifyBinRek(right) 
         simplify(BinExpr(op, left, simplified_right))      
       }
       case BinExpr(op : String, left : BinExpr, right: Node) => {
-        //println("bin rek left exp")
+        println("bin rek left exp")
         val simplified_left : Node = simplifyBinRek(left)
         simplify(BinExpr(op, simplified_left,right))
       }
-      case BinExpr(op, x: Unary, y: Unary) => {
+      /*case BinExpr(op, x: Unary, y: Unary) => {
         val left_simplified = simplifyUnaryRek(x)
         val right_simplified = simplifyUnaryRek(y)
         simplifyBinRek(BinExpr(op, left_simplified, right_simplified))
@@ -40,7 +44,7 @@ object Simplifier {
       case BinExpr(op, x: Node, y: Unary) => {
         val right_simplified = simplifyUnaryRek(y)
         simplifyBinRek(BinExpr(op, x, right_simplified))
-      }
+      }*/
       case _ : Node => simplify(node)
     }
   }
@@ -76,88 +80,17 @@ object Simplifier {
     case BinExpr("*", BinExpr("**",Variable(x), Variable(y)), BinExpr("**",Variable(u),Variable(v))) if x == u=>
       BinExpr("**",Variable(x),BinExpr("+", Variable(y),Variable(v)))
     case 
-    BinExpr(
-        "+", 
-        BinExpr(
-            "+", 
-            BinExpr(
-                "**", 
-                x, //and not Variable(x), because we can have nested exprs here
-                IntNum(2)
-            ),
-            BinExpr(
-                "*",
-                BinExpr(
-                    "*",
-                    IntNum(2),
-                    y
-                ),
-                z
-            )
-         ), 
-         BinExpr(
-             "**",
-             u, 
-             IntNum(2)
-         )
-      ) if (x == y && z == u) => BinExpr("**",BinExpr("+",x,z), IntNum(2))
+    BinExpr("+", BinExpr( "+", BinExpr( "**", x,  IntNum(2)), BinExpr("*",BinExpr("*",IntNum(2), y ),z)), BinExpr( "**",u, IntNum(2)) ) 
+            if (x == y && z == u) => BinExpr("**",BinExpr("+",x,z), IntNum(2))
     case BinExpr("**", BinExpr("**",Variable(x),Variable(n)),Variable(m)) => BinExpr("**",Variable(x),BinExpr("*",Variable(n), Variable(m)))
     //"(x+y)**2-x**2-2*x*y" => "y**2"
     case 
-    BinExpr(
-        "-",
-        BinExpr(
-          "-",
-          BinExpr(
-            "**",
-            BinExpr(
-              "+",
-              x1,
-              y1
-            ),
-            IntNum(2)
-          ),
-          BinExpr(
-            "**",
-            x2,
-            IntNum(2)
-          )
-        ),
-        BinExpr(
-          "*",
-          BinExpr(
-              "*",
-              IntNum(2),
-              x3    
-          ),
-          y3
-        )
-    ) if(x1 == x3 && x1 == x2 && y1 == y3) => BinExpr("**", y1, IntNum(2))
+    BinExpr("-",BinExpr("-", BinExpr("**",BinExpr("+", x1,y1),IntNum(2)),BinExpr( "**",x2,IntNum(2))),BinExpr( "*", BinExpr( "*",IntNum(2),x3 ), y3)) 
+      if(x1 == x3 && x1 == x2 && y1 == y3) => BinExpr("**", y1, IntNum(2))
     //"(x+y)**2-(x-y)**2" => "4*x*y"
     case
-    BinExpr(
-      "-",
-      BinExpr(
-          "**",
-          BinExpr(
-            "+",
-            x1,
-            y1
-          ),
-          IntNum(2)
-      ),
-      BinExpr(
-          "**",
-           BinExpr(
-              "-",
-              x2,
-              y2
-          ),
-          IntNum(2)
-          
-      )
-    ) if(x1 == x2 && y1 == y2) => BinExpr("*",BinExpr("*",IntNum(4),x1),y1)   
-    
+    BinExpr("-",BinExpr("**", BinExpr( "+", x1,y1),IntNum(2)),BinExpr("**", BinExpr("-",x2,y2),IntNum(2)) ) 
+      if(x1 == x2 && y1 == y2) => BinExpr("*",BinExpr("*",IntNum(4),x1),y1)   
     case _ => simplifyDivisionLaws(node)
   }
    
@@ -229,10 +162,6 @@ object Simplifier {
   def simplifyDistrMult(node : BinExpr) = node match{
     //parseString("2*x-x") mustEqual parseString("x")
     case BinExpr("-", BinExpr("*", IntNum(2),x), y) if x == y => x 
-    //parseString("x*y + x*z + v*y + v*z") mustEqual parseString("(x+v)*(y+z)")
-    case BinExpr("+",BinExpr("+", BinExpr("+", BinExpr("*",x1,y1),BinExpr("*",x2,z1)),BinExpr("*",v1,y2)),BinExpr("*",v2,z2)) 
-      if x1 == x2 && y1 == y2 && z1 == z2 && v1 == v2 => 
-        BinExpr("*", BinExpr("+",x1,v1), BinExpr("+",y1,z1))
     //parseString("x*z+y*z") mustEqual parseString("(x+y)*z")
     case BinExpr("+", BinExpr("*",x,z1), BinExpr("*",y,z2)) if z1 == z2 => BinExpr("*",BinExpr("+",x,y),z1)
     //parseString("x*y+x*z") mustEqual parseString("x*(y+z)")
@@ -308,9 +237,26 @@ object Simplifier {
     KeyDatumList(alreadyUsed.toList.map(x => KeyDatum(x._1, x._2)))
   }
   
-  def simplify(node : Assignment) = node match{
-    case Assignment(x,y) if x == y => EmptyNode() 
+  def simplify(node: IfElseExpr) :Node = {
+    if (simplify(node.cond) == TrueConst())simplify(node.left) 
+    else simplify(node.right)
+  }
+  
+  def simplify(node : Assignment) : Node = node match{
+    case Assignment(x,y) if x == y => EmptyNode()
+    case Assignment(x, y : IfElseExpr) => Assignment(x, simplify(y))
     case _ => node
+  }
+  
+  def simplify(node : IfElifElse) :Node= {
+    val cond = simplify(node.cond)
+    if (cond == TrueConst())simplify(node.if_body.asInstanceOf[NodeList].list.head) 
+    else simplify(node.elseBody.asInstanceOf[NodeList].list.head)
+  }
+  
+  def simplify(node : WhileInstr) : Node = {
+    if (simplify(node.cond) == FalseConst()) EmptyNode()
+    else simplify(node.body)
   }
   
   def simplify(node: Node): Node = {
@@ -324,6 +270,8 @@ object Simplifier {
       case variable : Variable => simplify(variable)
       case keydatumL : KeyDatumList => simplifyKeyDatmList(keydatumL)
       case assignment : Assignment => simplify(assignment)
+      case if_elif : IfElifElse => simplify(if_elif)
+      case while_instr : WhileInstr => simplify(while_instr)
       case t : Node => t
     }
   }

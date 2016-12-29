@@ -268,10 +268,10 @@ class Parser extends JavaTokenParsers {
   def elif: Parser[ElIf] = "elif" ~> expression ~ (":" ~> suite) ^^ { case condition ~ body => ElIf(condition , body)}
     
   def if_else_stmt: Parser[Node] = (
-        "if" ~> expression ~ (":" ~> suite) ~ elif_list.? ~ ("else"~":" ~> suite).? ^^ {
+        "if" ~> expression ~ (":" ~> suite) ~ (elif_list).? ~ ("else"~":" ~> suite).? ^^ {
+            case expression ~ suite ~ Some(elif_suite) ~ None => IfInstr(expression, suite)
+            //case expression ~ suite1 ~ None ~ Some(suite2)  => IfElseInstr(expression, suite1, suite2)
             case expression ~ suite1 ~ Some(elifList) ~ Some(suite) => IfElifElse(expression,suite1, elifList,suite)
-            case expression ~ suite1 ~ None ~ Some(suite2)  => IfElseInstr(expression, suite1, suite2)
-            case expression ~ suite ~ None ~ None => IfInstr(expression, suite)
         }
   )
   

@@ -686,3 +686,18 @@
 <result location="parserSpec (Specs.scala:187)" id="1777824533"><stats time="20" expectations="1" failures="1" examples="1"></stats></result>
 </parserSpec-results>
 <parserSpec-stats timestamp="1483030849953"><stats time="25" expectations="19" failures="4" successes="15" examples="19"><trend><stats time="25" failures="-1" successes="1"></stats></trend></stats></parserSpec-stats>
+<parserSpec-results timestamp="1483046119747"><result location="parserSpec (Specs.scala:127)" id="-1419505266"><stats time="228" expectations="1" failures="1" examples="1"></stats></result>
+<result location="parserSpec (Specs.scala:167)" id="-734408700"><stats time="151" expectations="1" failures="1" examples="1"></stats></result>
+<result location="parserSpec (Specs.scala:181)" id="-81652386"><stats time="74" expectations="1" failures="1" examples="1"></stats></result>
+<result location="parserSpec (Specs.scala:187)" id="1777824533"><stats time="78" expectations="1" failures="1" examples="1"></stats></result>
+</parserSpec-results>
+<parserSpec-stats timestamp="1483046119879"><stats time="304" expectations="19" failures="4" successes="15" examples="19"></stats></parserSpec-stats>
+<parserSpec-results timestamp="1483046815038"><result location="parserSpec (Specs.scala:127)" id="-1419505266"><stats time="332" expectations="1" failures="1" examples="1"></stats></result>
+<result location="parserSpec (Specs.scala:181)" id="-81652386"><stats time="20" expectations="1" failures="1" examples="1"></stats></result>
+<result location="parserSpec (Specs.scala:187)" id="1777824533"><stats time="24" expectations="1" failures="1" examples="1"></stats></result>
+</parserSpec-results>
+<parserSpec-stats timestamp="1483046815162"><stats time="124" expectations="19" failures="3" successes="16" examples="19"><trend><stats time="124" failures="-1" successes="1"></stats></trend></stats></parserSpec-stats>
+<parserSpec-results timestamp="1483048923797"><result location="parserSpec (Specs.scala:127)" id="-1419505266"><stats time="352" expectations="1" failures="1" examples="1"></stats></result>
+</parserSpec-results>
+<parserSpec-stats timestamp="1483048923912"><stats time="81" expectations="19" failures="1" successes="18" examples="19"><trend><stats time="81" failures="-2" successes="2"></stats></trend></stats></parserSpec-stats>
+<parserSpec-stats timestamp="1483053188227"><stats time="130" expectations="19" successes="19" examples="19"><trend><stats time="130" failures="-1" successes="1"></stats></trend></stats></parserSpec-stats>
