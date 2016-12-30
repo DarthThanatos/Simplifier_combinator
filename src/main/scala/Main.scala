@@ -31,7 +31,7 @@ object Main {
                    println("\nProgram after optimization:")
                    println(simplifiedTree.toStr)
                }
-               case parser.Success(result : AST.TrueConst, in) => {println(result.toStr)}
+               case parser.Success(result , in) => {println(result)}
                case parser.NoSuccess(msg: String, in) => println("FAILURE " + parseResult)
             }
         }
@@ -80,14 +80,14 @@ object Main {
       println("after: " + parseString("{ \"a\": 1, \"b\": 2, \"a\": 3 }",parser) + "\n")
       println("after: " + parseString("x=x",parser) + "\n")
       
-            val if_stmt_str = """if %s:
-                   { 
-                      x = 1
-                   }
-                   else: 
-                   {
-                      x = 0
-                   } """
+      val if_stmt_str = """if %s:
+             { 
+                x = 1
+             }
+             else: 
+             {
+                x = 0
+             } """
             
             
       println("after: " + parseString(if_stmt_str.format("True"),parser) + "\n")
@@ -95,30 +95,18 @@ object Main {
       
       val if_expr_str = "x = y if %s else z"
       println("after: " + parseString(if_expr_str.format("True"),parser) + "\n")
-            val str = """while False:
-                   { 
-                      x = x + 1
-                   } """
+      
+      val str = """while False:
+             { 
+                x = x + 1
+             } """
+            
       println("after: " + parseString(str,parser) + "\n")
       println("after: " + parseString("",parser) + "\n")
       println("after: " + parseString("x*y+x*z+v*y+v*z",parser) + "\n")
-      //println("after: " + parseString(" -- x -- y",parser) + "\n")
-      /*println("after: " + parseString("x*(1/y)",parser) + "\n")
-      println("after: " + parseString("x*(1/y)",parser) + "\n")
-      println("after: " + parseString("x*(1/y)",parser) + "\n")
-      println("after: " + parseString("x*(1/y)",parser) + "\n")
-      println("after: " + parseString("x*(1/y)",parser) + "\n")
-      println("after: " + parseString("x*(1/y)",parser) + "\n")
-      println("after: " + parseString("x*(1/y)",parser) + "\n")
-      println("after: " + parseString("x*(1/y)",parser) + "\n")
-      println("after: " + parseString("x*(1/y)",parser) + "\n")
-      println("after: " + parseString("x*(1/y)",parser) + "\n")
-      println("after: " + parseString("x*(1/y)",parser) + "\n")
-      println("after: " + parseString("x*(1/y)",parser) + "\n")
-      println("after: " + parseString("x*(1/y)",parser) + "\n")
-      println("after: " + parseString("x*(1/y)",parser) + "\n")
-      println("after: " + parseString("x*(1/y)",parser) + "\n")
-      println("after: " + parseString("x*(1/y)",parser) + "\n")
-      println("after: " + parseString("x*(1/y)",parser) + "\n")*/
+      println("after: " + parseString(" -- x -- y",parser) + "\n")
+      //println("after: " + parseString("---not--x",parser) + "\n")
+      println("after: " + parseString("x=1;x=0;x=3;y = 10 + 3",parser) + "\n")
+      println("after: " + parseString("-(x*(1/y))",parser) + "\n")
   }
 }

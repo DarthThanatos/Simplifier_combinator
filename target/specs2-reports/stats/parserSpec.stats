@@ -701,3 +701,16 @@
 </parserSpec-results>
 <parserSpec-stats timestamp="1483048923912"><stats time="81" expectations="19" failures="1" successes="18" examples="19"><trend><stats time="81" failures="-2" successes="2"></stats></trend></stats></parserSpec-stats>
 <parserSpec-stats timestamp="1483053188227"><stats time="130" expectations="19" successes="19" examples="19"><trend><stats time="130" failures="-1" successes="1"></stats></trend></stats></parserSpec-stats>
+<parserSpec-stats timestamp="1483089897334"><stats time="45" expectations="19" successes="19" examples="19"></stats></parserSpec-stats>
+<parserSpec-results timestamp="1483103307264"><result location="parserSpec (Specs.scala:66)" id="-53824131"><stats time="504" expectations="1" failures="1" examples="1"></stats></result>
+<result location="parserSpec (Specs.scala:163)" id="129361318"><stats time="8" expectations="1" failures="1" examples="1"></stats></result>
+</parserSpec-results>
+<parserSpec-stats timestamp="1483103307297"><stats time="23" expectations="19" failures="2" successes="17" examples="19"><trend><stats time="23" failures="2" successes="-2"></stats></trend></stats></parserSpec-stats>
+<parserSpec-stats timestamp="1483103610164"><stats time="21" expectations="19" successes="19" examples="19"><trend><stats time="21" failures="-2" successes="2"></stats></trend></stats></parserSpec-stats>
+<parserSpec-stats timestamp="1483104144583"><stats time="29" expectations="19" successes="19" examples="19"></stats></parserSpec-stats>
+<parserSpec-stats timestamp="1483104263939"><stats time="21" expectations="19" successes="19" examples="19"></stats></parserSpec-stats>
+<parserSpec-stats timestamp="1483104400169"><stats time="68" expectations="19" successes="19" examples="19"></stats></parserSpec-stats>
+<parserSpec-stats timestamp="1483104606799"><stats time="28" expectations="19" successes="19" examples="19"></stats></parserSpec-stats>
+<parserSpec-stats timestamp="1483104779222"><stats time="31" expectations="19" successes="19" examples="19"></stats></parserSpec-stats>
+<parserSpec-stats timestamp="1483104815947"><stats time="20" expectations="19" successes="19" examples="19"></stats></parserSpec-stats>
+<parserSpec-stats timestamp="1483104850874"><stats time="22" expectations="19" successes="19" examples="19"></stats></parserSpec-stats>

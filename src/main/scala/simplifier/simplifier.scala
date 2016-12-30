@@ -16,36 +16,8 @@ object Simplifier {
       case BinExpr("+",BinExpr("+", BinExpr("+", BinExpr("*",x1,y1),BinExpr("*",x2,z1)),BinExpr("*",v1,y2)),BinExpr("*",v2,z2)) 
       if x1 == x2 && y1 == y2 && z1 == z2 && v1 == v2 => 
         BinExpr("*", BinExpr("+",x1,v1), BinExpr("+",y1,z1))
-      case BinExpr(op : String, left : BinExpr, right: BinExpr) => {
-        println("bin rek both")
-        val simplified_left: Node = simplifyBinRek(left)
-        val simplified_right : Node = simplifyBinRek(right)
-        simplify(BinExpr(op, simplified_left, simplified_right))
-      }
-      case BinExpr(op : String, left : Node ,right: BinExpr) => {
-        println("bin rek right exp: " + left + right)
-        val simplified_right : Node = simplifyBinRek(right) 
-        simplify(BinExpr(op, left, simplified_right))      
-      }
-      case BinExpr(op : String, left : BinExpr, right: Node) => {
-        println("bin rek left exp")
-        val simplified_left : Node = simplifyBinRek(left)
-        simplify(BinExpr(op, simplified_left,right))
-      }
-      /*case BinExpr(op, x: Unary, y: Unary) => {
-        val left_simplified = simplifyUnaryRek(x)
-        val right_simplified = simplifyUnaryRek(y)
-        simplifyBinRek(BinExpr(op, left_simplified, right_simplified))
-      }     
-      case BinExpr(op, x: Unary, y: Node) => {
-        val left_simplified = simplifyUnaryRek(x)
-        simplifyBinRek(BinExpr(op, left_simplified, y))
-      }
-      case BinExpr(op, x: Node, y: Unary) => {
-        val right_simplified = simplifyUnaryRek(y)
-        simplifyBinRek(BinExpr(op, x, right_simplified))
-      }*/
-      case _ : Node => simplify(node)
+      case BinExpr(op, x,y) => simplify(BinExpr(op, simplify(x),simplify(y)))
+      //case _ : Node => simplify(node)
     }
   }
   
@@ -171,7 +143,9 @@ object Simplifier {
   }
   
   
-  def simplify(node_list : NodeList) : Node= node_list match{
+  /*
+   * // in case simplify below does not work :)  
+   def simplify(node_list : NodeList) : Node = node_list match{
     //println("node list")
     case NodeList(List(Assignment(x1,a), Assignment(x2,b))) if x1 == x2 => NodeList(List(Assignment(x1,b)))
     case _ => {
@@ -184,6 +158,37 @@ object Simplifier {
       )
       if(res.list == List()) EmptyNode() else res
     }
+    
+  }*/
+  
+  def simplify(node_list : NodeList) : Node = {
+      val simplifiedList = node_list.list match {
+        case (x @ Assignment(left1,right1)) :: (y @ Assignment(left2,right2)) :: t =>  
+          if (left1 == left2) simplify(NodeList(List(y) ++ t)) match{
+              case n : NodeList => n.list
+              case c => List(c) 
+          }
+          else List(x) ++ {
+            simplify(NodeList(List(y) ++ t)) match {
+              case n : NodeList => n.list
+              case c => List(c) 
+            }
+          }
+        case h::t => List(simplify(h)) ++ {
+          simplify(NodeList(t)) match {
+              case n : NodeList => n.list
+              case c => List(c) 
+          }
+        }
+        case Nil => List[Node]()
+      }
+      val res = NodeList(
+          {
+            val newlist = simplifiedList diff simplifiedList.collect{case e: EmptyNode => e}
+            newlist 
+          }
+      )
+      if(res.list == List()) EmptyNode() else res
     
   }
   
@@ -199,6 +204,7 @@ object Simplifier {
       val res = countOpers(op, x)
       if ((res._1 + 1) % 2 == 1) Unary(op, simplify(res._2)) else simplify(res._2)
     }
+    case Unary(op, x) => simplify(Unary(op,simplify(x)))
     case _ => simplify(node) 
   }
   
@@ -245,6 +251,7 @@ object Simplifier {
   def simplify(node : Assignment) : Node = node match{
     case Assignment(x,y) if x == y => EmptyNode()
     case Assignment(x, y : IfElseExpr) => Assignment(x, simplify(y))
+    case Assignment(x,y) => Assignment(simplify(x),simplify(y))
     case _ => node
   }
   
