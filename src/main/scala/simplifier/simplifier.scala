@@ -10,14 +10,13 @@ object Simplifier {
 
   
   def simplifyBinRek(node: BinExpr) : Node = {
-      println("bin rek: " + node)
+      //println("bin rek: " + node)
       node match{
       //parseString("x*y + x*z + v*y + v*z") mustEqual parseString("(x+v)*(y+z)")
       case BinExpr("+",BinExpr("+", BinExpr("+", BinExpr("*",x1,y1),BinExpr("*",x2,z1)),BinExpr("*",v1,y2)),BinExpr("*",v2,z2)) 
       if x1 == x2 && y1 == y2 && z1 == z2 && v1 == v2 => 
         BinExpr("*", BinExpr("+",x1,v1), BinExpr("+",y1,z1))
       case BinExpr(op, x,y) => simplify(BinExpr(op, simplify(x),simplify(y)))
-      //case _ : Node => simplify(node)
     }
   }
   
@@ -210,9 +209,8 @@ object Simplifier {
   
   def countOpers(op: String, node: Unary) : (Int,Node) = 
       node match{
-    
-      case Unary(op, x : Unary) => {var tmp = countOpers(op, x); val res = (tmp._1 + 1, tmp._2); println("count " + res); res}
-      case Unary(op, x : Node) => {println ("count 1"); (1,x)}
+        case Unary(op, x : Unary) => {var tmp = countOpers(op, x); val res = (tmp._1 + 1, tmp._2); res}
+        case Unary(op, x : Node) =>  (1,x)
     }
   
   
@@ -268,7 +266,7 @@ object Simplifier {
   
   def simplify(node: Node): Node = {
    
-    println("sim node" + node.getClass)
+    //println("sim node" + node.getClass)
     node match{ 
       case tuple : CustomizedTuple => simplify(tuple)
       case bin_expr : BinExpr => simplifyBinRek(bin_expr)

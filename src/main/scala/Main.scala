@@ -107,6 +107,6 @@ object Main {
       println("after: " + parseString(" -- x -- y",parser) + "\n")
       //println("after: " + parseString("---not--x",parser) + "\n")
       println("after: " + parseString("x=1;x=0;x=3;y = 10 + 3",parser) + "\n")
-      println("after: " + parseString("-(x*(1/y))",parser) + "\n")
+      println("after: " + parseString("-----(x*(1/y))",parser) + "\n")
   }
 }
